@@ -1,14 +1,14 @@
-import { useState } from 'react'
+import { useState, createContext } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Form from './components/Form.jsx'
+import Courses from './components/Courses.jsx'
 
+const FormContext = createContext()
+export { FormContext }
 function App() {
   const [grades, setGrades] = useState([{course: 'Math', grade: "A", credits: 4}])
-
-  function addCourse() {
-    setGrades([...grades, {course: 'Science', grade: "B", credits: 3}])
-  }
 
   function qualityPonintCalculator(grade, credits) {
     if (grade === "A") {
@@ -63,17 +63,10 @@ function App() {
 
   return (
     <>
-      <button className={"my-4"} onClick={addCourse}>Add Course</button>
-      {grades.map((grade) => (
-        <div className={"flex justify-center items-center gap-5"} key={grade.course}>
-          <p>{grade.course}</p>
-          <p>{grade.grade}</p>
-          <p>{grade.credits}</p>
-        </div>
-      ))}
-      {grades.map((grade) => (
-        <p>{qualityPonintCalculator(grade.grade,grade.credits)}</p>
-      ))}
+      <FormContext.Provider value={{ grades, setGrades }}>
+        <Form />
+        <Courses />
+      </FormContext.Provider>
       {calculateGpa()}
     </>
   )
