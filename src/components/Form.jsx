@@ -8,6 +8,10 @@ export default function Form() {
     setGrades([...grades, {course, grade, credits}])
   }
 
+  function clearCourses() {
+    setGrades([])
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log("Submitted")
@@ -34,6 +38,7 @@ export default function Form() {
       </select>
       <input required name={"credits"} type="number" placeholder="Credits Hours" />
       <button type={"submit"}>Add Course</button>
+      <button type={"reset"} onClick={clearCourses}>Reset</button>
     </form>
   )
 
