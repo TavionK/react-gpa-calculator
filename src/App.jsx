@@ -1,6 +1,4 @@
 import { useState, createContext } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Form from './components/Form.jsx'
 import Courses from './components/Courses.jsx'
@@ -10,7 +8,7 @@ export { FormContext }
 function App() {
   const [grades, setGrades] = useState([{course: 'Math', grade: "A", credits: 4}])
 
-  function qualityPonintCalculator(grade, credits) {
+  function qualityPointCalculator(grade, credits) {
     if (grade === "A") {
       return 4 * credits
     } else if (grade === "A-") {
@@ -47,7 +45,7 @@ function App() {
   function getTotalGradePoints() {
     let totalGradePoints = 0
     grades.forEach((grade) => {
-      totalGradePoints += qualityPonintCalculator(grade.grade, grade.credits)
+      totalGradePoints += qualityPointCalculator(grade.grade, grade.credits)
     })
     return totalGradePoints
   }
