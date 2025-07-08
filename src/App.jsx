@@ -65,7 +65,7 @@ function App() {
         <Form />
         <Courses />
       </FormContext.Provider>
-      {calculateGpa()}
+      {grades.length > 0 ? calculateGpa() : null}
     </>
   )
 }
