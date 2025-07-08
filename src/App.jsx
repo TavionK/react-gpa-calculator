@@ -1,9 +1,8 @@
 import { useState, createContext } from 'react'
 import './App.css'
-import Form from './components/Form.jsx'
-import Courses from './components/Courses.jsx'
+import Calculator from './components/Calculator.jsx'
 
-const FormContext = createContext()
+const FormContext = createContext(null)
 export { FormContext }
 function App() {
   const [grades, setGrades] = useState([{course: 'Math', grade: "A", credits: 4}])
@@ -61,11 +60,8 @@ function App() {
 
   return (
     <>
-      <FormContext.Provider value={{ grades, setGrades }}>
-        <Form />
-        <Courses />
-      </FormContext.Provider>
-      {grades.length > 0 ? calculateGpa() : null}
+      <h1>GPA Calculator</h1>
+      <Calculator />
     </>
   )
 }

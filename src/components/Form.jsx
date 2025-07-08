@@ -1,15 +1,15 @@
-import React from 'react';
-import {FormContext} from '../App.jsx'
+import { useContext } from 'react'
+import {CalculatorContext} from './Calculator.jsx'
 
 export default function Form() {
-  const {grades, setGrades} = React.useContext(FormContext)
+  const {courses, setCourses} = useContext(CalculatorContext)
 
   function addCourse(course, grade, credits) {
-    setGrades([...grades, {course, grade, credits}])
+    setCourses([...courses, {course, grade, credits}])
   }
 
   function clearCourses() {
-    setGrades([])
+    setCourses([])
   }
 
   const handleSubmit = (e) => {

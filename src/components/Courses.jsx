@@ -1,17 +1,17 @@
 import React from 'react';
-import { FormContext } from "../App.jsx";
+import { CalculatorContext } from "./Calculator.jsx";
 
 export default function Courses() {
-  const {grades} = React.useContext(FormContext)
+  const {courses} = React.useContext(CalculatorContext)
 
   return (
-     grades.length > 0 ? <>
-      {grades.map((grade, index) => (
+     courses.length > 0 ? <>
+      {courses.map((course, index) => (
         <div className={"flex justify-center items-center gap-5"} key={index}>
           <p>{index}</p>
-          <p>{grade.course}</p>
-          <p>{grade.grade}</p>
-          <p>{grade.credits}</p>
+          <p>{course.course}</p>
+          <p>{course.grade}</p>
+          <p>{course.credits}</p>
         </div>
       ))}
     </> : <p>No Courses Added</p>
