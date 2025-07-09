@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { CalculatorContext } from "./Calculator.jsx";
 
 export default function Form() {
   const { courses, setCourses } = useContext(CalculatorContext);
-
+  const firstInputRef = useRef(null);
   function addCourse(id, course, grade, credits) {
     setCourses([...courses, { id, course, grade, credits }]);
   }
@@ -23,11 +23,18 @@ export default function Form() {
       Number(e.target.credits.value),
     );
     e.target.reset();
+    firstInputRef.current.focus();
   };
 
   return (
     <form className={"flex gap-4"} onSubmit={handleSubmit}>
-      <input required name={"course"} type="text" placeholder="Course Name" />
+      <input
+        required
+        name={"course"}
+        type="text"
+        placeholder="Course Name"
+        ref={firstInputRef}
+      />
       <select required name="grade" id="">
         <option disabled>-- Select a Grade --</option>
         <option value="A">A</option>
