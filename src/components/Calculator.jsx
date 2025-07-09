@@ -1,6 +1,6 @@
 import { useState, createContext } from "react";
 
-const CalculatorContext = createContext();
+const CalculatorContext = createContext(null);
 export { CalculatorContext };
 
 export default function Calculator({ children }) {
