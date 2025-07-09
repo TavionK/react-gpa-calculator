@@ -40,11 +40,14 @@ export default function Form() {
         <option value="C-">C-</option>
         <option value="D+">D+</option>
         <option value="D">D</option>
+        <option value="D-">D-</option>
+        <option value="F">F</option>
       </select>
       <input
         required
         name={"credits"}
         type="number"
+        min="0"
         placeholder="Credits Hours"
       />
       <button type={"submit"}>Add Course</button>

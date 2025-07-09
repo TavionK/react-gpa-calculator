@@ -25,7 +25,9 @@ export default function Gpa() {
       return 1.3 * credits;
     } else if (grade === "D") {
       return 1 * credits;
-    } else {
+    } else if (grade === "D-") {
+      return 0.7 * credits;
+    } else if (grade === "F") {
       return 0;
     }
   }
