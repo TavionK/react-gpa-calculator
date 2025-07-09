@@ -1,8 +1,8 @@
-import React from "react";
+import { useContext } from "react";
 import { CalculatorContext } from "./Calculator.jsx";
 
 export default function Courses() {
-  const { courses, setCourses } = React.useContext(CalculatorContext);
+  const { courses, setCourses } = useContext(CalculatorContext);
 
   function removeCourse(id) {
     setCourses((prevCourses) =>

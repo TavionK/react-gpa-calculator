@@ -1,4 +1,3 @@
-import { useState, createContext } from "react";
 import "./App.css";
 import Calculator from "./components/Calculator.jsx";
 import Courses from "./components/Courses.jsx";

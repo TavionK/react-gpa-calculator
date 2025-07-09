@@ -1,18 +1,16 @@
-import { useState, createContext } from 'react'
-import Form from './Form.jsx'
-import Courses from './Courses.jsx'
+import { useState, createContext } from "react";
 
-const CalculatorContext = createContext()
-export { CalculatorContext }
+const CalculatorContext = createContext();
+export { CalculatorContext };
 
-export default function Calculator({children}) {
-  const [courses, setCourses] = useState([])
+export default function Calculator({ children }) {
+  const [courses, setCourses] = useState([]);
 
   return (
     <>
       <CalculatorContext.Provider value={{ courses, setCourses }}>
-          {children}
+        {children}
       </CalculatorContext.Provider>
     </>
-  )
+  );
 }

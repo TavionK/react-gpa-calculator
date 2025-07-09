@@ -1,8 +1,8 @@
-import React from "react";
+import { useContext } from "react";
 import { CalculatorContext } from "./Calculator.jsx";
 
 export default function Gpa() {
-  const { courses } = React.useContext(CalculatorContext);
+  const { courses } = useContext(CalculatorContext);
 
   function qualityPointCalculator(grade, credits) {
     if (grade === "A") {
