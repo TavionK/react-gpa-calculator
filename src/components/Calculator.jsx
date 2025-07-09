@@ -6,7 +6,7 @@ const CalculatorContext = createContext()
 export { CalculatorContext }
 
 export default function Calculator() {
-  const [courses, setCourses] = useState([{course: 'Math', grade: "A", credits: 4}])
+  const [courses, setCourses] = useState([{id: 0, course: 'Math', grade: "A", credits: 4}])
 
   function qualityPointCalculator(grade, credits) {
     if (grade === "A") {
