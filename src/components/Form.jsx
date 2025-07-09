@@ -1,11 +1,12 @@
 import { useContext } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import {CalculatorContext} from './Calculator.jsx'
 
 export default function Form() {
   const {courses, setCourses} = useContext(CalculatorContext)
 
-  function addCourse(course, grade, credits) {
-    setCourses([...courses, {course, grade, credits}])
+  function addCourse(id, course, grade, credits) {
+    setCourses([...courses, {id, course, grade, credits}])
   }
 
   function clearCourses() {
@@ -15,9 +16,8 @@ export default function Form() {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log("Submitted")
-    addCourse(e.target.course.value, e.target.grade.value, Number(e.target.credits.value))
+    addCourse(uuidv4(), e.target.course.value, e.target.grade.value, Number(e.target.credits.value))
     e.target.reset()
-
   }
 
   return (
