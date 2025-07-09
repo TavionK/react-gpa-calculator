@@ -1,24 +1,29 @@
-import { useContext } from 'react'
-import { v4 as uuidv4 } from 'uuid'
-import {CalculatorContext} from './Calculator.jsx'
+import { useContext } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { CalculatorContext } from "./Calculator.jsx";
 
 export default function Form() {
-  const {courses, setCourses} = useContext(CalculatorContext)
+  const { courses, setCourses } = useContext(CalculatorContext);
 
   function addCourse(id, course, grade, credits) {
-    setCourses([...courses, {id, course, grade, credits}])
+    setCourses([...courses, { id, course, grade, credits }]);
   }
 
   function clearCourses() {
-    setCourses([])
+    setCourses([]);
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("Submitted")
-    addCourse(uuidv4(), e.target.course.value, e.target.grade.value, Number(e.target.credits.value))
-    e.target.reset()
-  }
+    e.preventDefault();
+    console.log("Submitted");
+    addCourse(
+      uuidv4(),
+      e.target.course.value,
+      e.target.grade.value,
+      Number(e.target.credits.value),
+    );
+    e.target.reset();
+  };
 
   return (
     <form className={"flex gap-4"} onSubmit={handleSubmit}>
@@ -36,10 +41,16 @@ export default function Form() {
         <option value="D+">D+</option>
         <option value="D">D</option>
       </select>
-      <input required name={"credits"} type="number" placeholder="Credits Hours" />
+      <input
+        required
+        name={"credits"}
+        type="number"
+        placeholder="Credits Hours"
+      />
       <button type={"submit"}>Add Course</button>
-      <button type={"reset"} onClick={clearCourses}>Reset</button>
+      <button type={"reset"} onClick={clearCourses}>
+        Reset
+      </button>
     </form>
-  )
-
+  );
 }

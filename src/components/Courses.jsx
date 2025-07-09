@@ -1,16 +1,21 @@
-import React from 'react';
+import React from "react";
 import { CalculatorContext } from "./Calculator.jsx";
 
 export default function Courses() {
-  const {courses, setCourses} = React.useContext(CalculatorContext)
+  const { courses, setCourses } = React.useContext(CalculatorContext);
 
-  function removeCourse(id){
-    setCourses(prevCourses => prevCourses.filter(course => course.id !== id))
+  function removeCourse(id) {
+    setCourses((prevCourses) =>
+      prevCourses.filter((course) => course.id !== id),
+    );
   }
-  return (
-     courses.length > 0 ? <>
+  return courses.length > 0 ? (
+    <>
       {courses.map((course, index) => (
-        <div className={"flex justify-center items-center gap-5"} key={course.id}>
+        <div
+          className={"flex justify-center items-center gap-5"}
+          key={course.id}
+        >
           <p>{index}</p>
           <p>{course.course}</p>
           <p>{course.grade}</p>
@@ -18,6 +23,8 @@ export default function Courses() {
           <button onClick={() => removeCourse(course.id)}>Remove</button>
         </div>
       ))}
-    </> : <p>No Courses Added</p>
-  )
+    </>
+  ) : (
+    <p>No Courses Added</p>
+  );
 }
