@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CalculatorContext } from "./Calculator.jsx";
+import { CalculatorContext } from "./Calculator.js";
 
 export default function Gpa() {
   const { courses } = useContext(CalculatorContext);

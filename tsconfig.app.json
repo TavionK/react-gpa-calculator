@@ -24,7 +24,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": [
-    "../steal package/src"
-  ]
+  "include": ["src"]
 }
