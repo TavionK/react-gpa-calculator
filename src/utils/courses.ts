@@ -4,3 +4,29 @@ export interface Course {
   grade: string;
   credits: number;
 }
+
+export interface CourseGradePointConversion {
+  A: 4;
+  "A-": 3.7;
+  "B+": 3.3;
+  B: 3;
+  "B-": 2.7;
+  "C+": 2.3;
+  C: 2;
+  "C-": 1.7;
+  "D+": 1.3;
+  D: 1;
+  "D-": 0.7;
+  F: 0;
+}
+
+export function addCourse(courseArr: Course[], newCourse: Course): Course[] {
+  return [...courseArr, newCourse];
+}
+
+export function getTotalCredits(courseArr: Course[]) {
+  return courseArr.reduce(
+    (total: number, course: Course) => total + course.credits,
+    0,
+  );
+}
