@@ -1,30 +1,9 @@
-import { useContext, useRef } from "react";
-import { v4 as uuidv4 } from "uuid";
-import { CalculatorContext } from "./Calculator.js";
+import { type Course } from "../utils/courses";
 
-export default function Form() {
-  const { courses, setCourses } = useContext(CalculatorContext);
-  const firstInputRef = useRef(null);
-  function addCourse(id, course, grade, credits) {
-    setCourses([...courses, { id, course, grade, credits }]);
-  }
-
-  function clearCourses() {
-    setCourses([]);
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Submitted");
-    addCourse(
-      uuidv4(),
-      e.target.course.value,
-      e.target.grade.value,
-      Number(e.target.credits.value),
-    );
-    e.target.reset();
-    firstInputRef.current.focus();
-  };
+interface FormProps {
+  setCourses: React.Dispatch<React.SetStateAction<Course[]>>;
+}
+export default function Form({setCourses}: FormProps["setCourses"]) {
 
   return (
     <form className={"flex gap-4"} onSubmit={handleSubmit}>
