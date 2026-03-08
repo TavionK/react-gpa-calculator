@@ -6,22 +6,25 @@ interface FormProps {
 }
 export default function Form({ setCourses }: FormProps) {
   const [courseName, setName] = useState("");
-  const [courseGrade, setGrade] = useState("");
+  const [courseGrade, setGrade] = useState("A");
   const [courseCreditHours, setCreditHours] = useState(0);
 
   return (
-    <form className={"flex gap-4"} onSubmit={(e)=>{
-      e.preventDefault();
-      const newCourse = {
-        id: crypto.randomUUID(),
-        course: courseName,
-        grade: courseGrade,
-        credits: courseCreditHours,
-      };
-      setCourses((prevCourses: Course[]): Course[] =>
-        addCourse(prevCourses, newCourse),
-      );
-    }}>
+    <form
+      className={"flex gap-4"}
+      onSubmit={(e) => {
+        e.preventDefault();
+        const newCourse = {
+          id: crypto.randomUUID(),
+          course: courseName,
+          grade: courseGrade,
+          credits: courseCreditHours,
+        };
+        setCourses((prevCourses: Course[]): Course[] =>
+          addCourse(prevCourses, newCourse),
+        );
+      }}
+    >
       <input
         required
         type="text"
@@ -56,7 +59,9 @@ export default function Form({ setCourses }: FormProps) {
         value={courseCreditHours}
         onChange={(e) => setCreditHours(e.target.valueAsNumber)}
       />
-      <button type={"submit"} className="bg-gray-700 px-2 py-1 rounded-md">Add Course</button>
+      <button type={"submit"} className="bg-gray-700 px-2 py-1 rounded-md">
+        Add Course
+      </button>
     </form>
   );
 }
