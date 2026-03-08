@@ -11,12 +11,12 @@ export default function CoursesList({ courses }: CourseListProps) {
       {courses.length === 0 ? (
         <p className="text-center mt-8">No Courses Added</p>
       ) : (
-        <table className="table-auto w-full">
+        <table className="border-collapse border border-gray-400 table-auto w-full">
           <thead>
             <tr>
-              <th>Course</th>
-              <th>Grade</th>
-              <th>Credits</th>
+              <th className="border border-gray-300">Course</th>
+              <th className="border border-gray-300">Grade</th>
+              <th className="border border-gray-300">Credits</th>
             </tr>
           </thead>
           <tbody>
