@@ -9,9 +9,9 @@ export default function CoursesList({ courses }: CourseListProps) {
   return (
     <>
       {courses.length === 0 ? (
-        <p className="text-center">No Courses Added</p>
+        <p className="text-center mt-8">No Courses Added</p>
       ) : (
-        <ul>
+        <ul className="mt-8">
           {courses.map((course: Course) => (
             <CourseListItem course={course} />
           ))}

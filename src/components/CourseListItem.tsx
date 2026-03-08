@@ -4,5 +4,11 @@ interface CourseListItemProps {
 }
 
 export default function CourseListItem({ course }: CourseListItemProps) {
-  return <p>{course.course}</p>;
+  return (
+    <li className="flex justify-between" key={course.id}>
+      <p>{course.course}</p>
+      <p>{course.grade}</p>
+      <p>{course.credits}</p>
+    </li>
+  );
 }
