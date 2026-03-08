@@ -1,20 +1,39 @@
-import { type Course } from "../utils/courses";
+import { type Course, addCourse } from "../utils/courses";
+import { type Dispatch, type SetStateAction, useState } from "react";
 
 interface FormProps {
-  setCourses: React.Dispatch<React.SetStateAction<Course[]>>;
+  setCourses: Dispatch<SetStateAction<Course[]>>;
 }
-export default function Form({setCourses}: FormProps["setCourses"]) {
+export default function Form({ setCourses }: FormProps) {
+  const [courseName, setName] = useState("");
+  const [courseGrade, setGrade] = useState("");
+  const [courseCreditHours, setCreditHours] = useState(0);
 
   return (
-    <form className={"flex gap-4"} onSubmit={handleSubmit}>
+    <form className={"flex gap-4"} onSubmit={(e)=>{
+      e.preventDefault();
+      const newCourse = {
+        id: crypto.randomUUID(),
+        course: courseName,
+        grade: courseGrade,
+        credits: courseCreditHours,
+      };
+      setCourses((prevCourses: Course[]): Course[] =>
+        addCourse(prevCourses, newCourse),
+      );
+    }}>
       <input
         required
-        name={"course"}
         type="text"
         placeholder="Course Name"
-        ref={firstInputRef}
+        value={courseName}
+        onChange={(e) => setName(e.target.value)}
       />
-      <select required name="grade" id="">
+      <select
+        required
+        value={courseGrade}
+        onChange={(e) => setGrade(e.target.value)}
+      >
         <option disabled>-- Select a Grade --</option>
         <option value="A">A</option>
         <option value="A-">A-</option>
@@ -31,15 +50,13 @@ export default function Form({setCourses}: FormProps["setCourses"]) {
       </select>
       <input
         required
-        name={"credits"}
         type="number"
         min="0"
-        placeholder="Credits Hours"
+        placeholder="Credit Hours"
+        value={courseCreditHours}
+        onChange={(e) => setCreditHours(e.target.valueAsNumber)}
       />
-      <button type={"submit"}>Add Course</button>
-      <button type={"reset"} onClick={clearCourses}>
-        Reset
-      </button>
+      <button type={"submit"} className="bg-gray-700 px-2 py-1 rounded-md">Add Course</button>
     </form>
   );
 }
