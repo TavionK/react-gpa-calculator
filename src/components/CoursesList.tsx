@@ -11,11 +11,20 @@ export default function CoursesList({ courses }: CourseListProps) {
       {courses.length === 0 ? (
         <p className="text-center mt-8">No Courses Added</p>
       ) : (
-        <ul className="mt-8">
-          {courses.map((course: Course) => (
-            <CourseListItem course={course} />
-          ))}
-        </ul>
+        <table className="table-auto w-full">
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>Grade</th>
+              <th>Credits</th>
+            </tr>
+          </thead>
+          <tbody>
+            {courses.map((course: Course) => (
+              <CourseListItem course={course} />
+            ))}
+          </tbody>
+        </table>
       )}
     </>
   );

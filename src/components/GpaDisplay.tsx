@@ -6,5 +6,11 @@ interface GpaDisplayProps {
 }
 
 export default function GpaDisplay({ courses }: GpaDisplayProps) {
-  return <p>{calculateGpa(courses)}</p>;
+  return (
+    <div className="flex justify-center mt-8">
+      <p className="bg-gray-500 p-4 rounded-md text-lg">
+        {calculateGpa(courses)}
+      </p>
+    </div>
+  );
 }
