@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { type Course } from "./utils/courses";
-import Form from "./components/Form.tsx";
 import CoursesList from "./components/CoursesList.tsx";
 import GpaDisplay from "./components/GpaDisplay.tsx";
 
@@ -19,9 +18,7 @@ function App() {
         </div>
         <GpaDisplay courses={courses} />
       </div>
-      <Form setCourses={setCourses} />
-      <hr className="my-4 border-gray-500" />
-      <CoursesList courses={courses} />
+      <CoursesList courses={courses} setCourses={setCourses} />
     </main>
   );
 }
