@@ -1,8 +1,11 @@
 import type { Course } from "../utils/courses";
 import { X } from "lucide-react";
+import { deleteCourse } from "../utils/courses";
 
 interface CourseListItemProps {
   course: Course;
+  courses: Course[];
+  setCourses: (courses: Course[]) => void;
   updateCourse: (
     id: string,
     field: keyof Course,
@@ -13,6 +16,8 @@ interface CourseListItemProps {
 export default function CourseListItem({
   course,
   updateCourse,
+  courses,
+  setCourses,
 }: CourseListItemProps) {
   return (
     <li className="flex flex-wrap gap-4 items-center justify-between bg-gray-900 border border-gray-700 py-4 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
@@ -70,7 +75,11 @@ export default function CourseListItem({
           <option value="6">6</option>
         </select>
       </label>
-      <button>
+      <button
+        onClick={() => {
+          setCourses(deleteCourse(courses, course.id));
+        }}
+      >
         <X
           className={
             "text-gray-700 border border-transparent cursor-pointer hover:border-red-500 hover:text-red-500 transition-colors duration-300 ease-in-out rounded-md size-8"

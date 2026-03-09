@@ -45,3 +45,7 @@ export function calculateGpa(courseArr: Course[]): string {
   let totalGradePoints: number = getTotalGradePoints(courseArr);
   return (totalGradePoints / totalCredits).toFixed(2);
 }
+
+export function deleteCourse(courseArr: Course[], courseId: string): Course[] {
+  return courseArr.filter((course: Course): boolean => course.id !== courseId);
+}

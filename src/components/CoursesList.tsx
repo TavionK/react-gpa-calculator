@@ -42,6 +42,8 @@ export default function CoursesList({ courses, setCourses }: CourseListProps) {
               key={course.id}
               updateCourse={updateCourse}
               course={course}
+              courses={courses}
+              setCourses={setCourses}
             />
           ))}
         </ul>
