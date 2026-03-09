@@ -20,8 +20,11 @@ export default function CourseListItem({
   setCourses,
 }: CourseListItemProps) {
   return (
-    <li className="flex flex-wrap gap-4 items-center justify-between bg-gray-900 border border-gray-700 py-4 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
-      <label className="gap-2 flex flex-col small-text" htmlFor="course">
+    <li className="grid grid-cols-2 grid-rows-3 sm:flex sm:flex-wrap gap-4 items-center justify-between bg-gray-900 border border-gray-700 py-4 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
+      <label
+        className="col-span-2 gap-2 flex flex-col small-text"
+        htmlFor="course"
+      >
         Course Name
         <input
           id="course"
@@ -76,6 +79,7 @@ export default function CourseListItem({
         </select>
       </label>
       <button
+        className="row-start-1 col-start-2 place-self-end"
         onClick={() => {
           setCourses(deleteCourse(courses, course.id));
         }}
