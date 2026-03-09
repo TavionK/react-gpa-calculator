@@ -20,15 +20,15 @@ export default function CourseListItem({
   setCourses,
 }: CourseListItemProps) {
   return (
-    <li className="grid grid-cols-2 grid-rows-3 md:flex md:flex-wrap gap-4 items-center justify-between bg-gray-900 border border-gray-700 py-4 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
+    <li className="grid grid-cols-2 grid-rows-3 md:flex md:flex-wrap gap-2 items-center justify-between bg-gray-900 border border-gray-700 py-4 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
       <label
-        className="col-span-2 gap-2 flex flex-col small-text"
+        className="col-span-2 gap-2 flex flex-col small-text md:flex-1"
         htmlFor="course"
       >
         Course Name
         <input
           id="course"
-          className="text-white bg-gray-800 border border-gray-700 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-charged-yellow"
+          className="h-10 text-white text-lg bg-gray-800 border border-gray-700 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-charged-yellow"
           type="text"
           value={course.course}
           placeholder="Course Name"
@@ -37,11 +37,14 @@ export default function CourseListItem({
           }
         />
       </label>
-      <label className="gap-2 flex flex-col small-text" htmlFor="grade">
+      <label
+        className="gap-2 flex flex-col small-text md:flex-2"
+        htmlFor="grade"
+      >
         Grade
         <select
           id="grade"
-          className="text-white bg-gray-800 border border-gray-700 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-charged-yellow"
+          className="h-10 text-white text-lg bg-gray-800 border border-gray-700 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-charged-yellow"
           name=""
           value={course.grade}
           onChange={(e): void =>
@@ -62,11 +65,14 @@ export default function CourseListItem({
           <option value="F">F</option>
         </select>
       </label>
-      <label className="gap-2 flex flex-col small-text" htmlFor="credits">
+      <label
+        className="gap-2 flex flex-col small-text md:flex-2"
+        htmlFor="credits"
+      >
         Credits
         <select
           id="credits"
-          className="text-white bg-gray-800 border border-gray-700 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-charged-yellow "
+          className="h-10 text-white text-lg bg-gray-800 border border-gray-700 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-charged-yellow "
           value={course.credits}
           onChange={(e): void =>
             updateCourse(course.id, "credits", Number(e.target.value))
