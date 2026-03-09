@@ -42,8 +42,6 @@ function getTotalGradePoints(courseArr: Course[]): number {
 
 export function calculateGpa(courseArr: Course[]): string {
   let totalCredits: number = getTotalCredits(courseArr);
-  console.log(totalCredits);
   let totalGradePoints: number = getTotalGradePoints(courseArr);
-  console.log(totalGradePoints);
   return (totalGradePoints / totalCredits).toFixed(2);
 }
