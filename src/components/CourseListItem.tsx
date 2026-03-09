@@ -14,7 +14,7 @@ export default function CourseListItem({
   updateCourse,
 }: CourseListItemProps) {
   return (
-    <li className="flex gap-4 items-center justify-between bg-gray-900 border border-gray-700 p-4 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
+    <li className="flex flex-wrap gap-4 items-center justify-between bg-gray-900 border border-gray-700 p-4 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
       <input
         className="bg-gray-800 border border-gray-700 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-charged-yellow"
         type="text"

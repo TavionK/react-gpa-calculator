@@ -8,7 +8,6 @@ interface CourseListProps {
 
 export default function CoursesList({ courses, setCourses }: CourseListProps) {
   function handleAddCourse() {
-    console.log("Add Course");
     setCourses([
       ...courses,
       { id: crypto.randomUUID(), course: "", grade: "A", credits: 3 },
