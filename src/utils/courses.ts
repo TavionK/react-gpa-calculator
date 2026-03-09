@@ -24,7 +24,7 @@ export function addCourse(courseArr: Course[], newCourse: Course): Course[] {
   return [...courseArr, newCourse];
 }
 
-export function getTotalCredits(courseArr: Course[]) {
+export function getTotalCredits(courseArr: Course[]): number {
   return courseArr.reduce(
     (total: number, course: Course): number => total + course.credits,
     0,
