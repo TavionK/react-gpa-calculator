@@ -20,7 +20,7 @@ export default function CourseListItem({
   setCourses,
 }: CourseListItemProps) {
   return (
-    <li className="grid grid-cols-2 grid-rows-3 sm:flex sm:flex-wrap gap-4 items-center justify-between bg-gray-900 border border-gray-700 py-4 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
+    <li className="grid grid-cols-2 grid-rows-3 md:flex md:flex-wrap gap-4 items-center justify-between bg-gray-900 border border-gray-700 py-4 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
       <label
         className="col-span-2 gap-2 flex flex-col small-text"
         htmlFor="course"
@@ -81,7 +81,7 @@ export default function CourseListItem({
       <button
         type="button"
         aria-label={`Delete ${course.course} course`}
-        className="row-start-1 col-start-2 place-self-end cursor-pointer border border-transparent hover:border-red-500 hover:text-red-500 focus-visible:outline-none focus-visible:ring-2  focus-visible:ring-red-500 focus-visible:text-red-500 rounded-md group transition-colors duration-300 ease-in-out"
+        className="h-fit row-start-1 col-start-2 place-self-end cursor-pointer border border-transparent hover:border-red-500 hover:text-red-500 focus-visible:outline-none focus-visible:ring-2  focus-visible:ring-red-500 focus-visible:text-red-500 rounded-md group transition-colors duration-300 ease-in-out"
         onClick={() => {
           setCourses(deleteCourse(courses, course.id));
         }}
