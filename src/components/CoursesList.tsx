@@ -53,7 +53,7 @@ export default function CoursesList({ courses, setCourses }: CourseListProps) {
           ))}
         </ul>
       </section>
-      <div className="flex gap-4 mt-4">
+      <div className="flex gap-4 my-4">
         <button
           onClick={handleAddCourse}
           className="flex justify-center gap-2 basis-3/4 cursor-pointer p-2 sm:p-4 rounded-md border border-dashed text-gray-700 border-gray-700 hover:text-charged-yellow hover:border-charged-yellow transition-colors duration-300 ease-in-out"
