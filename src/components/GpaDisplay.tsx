@@ -12,9 +12,9 @@ export default function GpaDisplay({ courses }: GpaDisplayProps) {
       <p className="text-3xl font-bold text-charged-yellow">
         {calculateGpa(courses) === "NaN" ? "—" : calculateGpa(courses)}
       </p>
-      <p className="small-text">
-        {courses.length === 0 ? "Add Courses" : "Courses added"}
-      </p>
+      {/*<p className="small-text">*/}
+      {/*  {courses.length === 0 ? "Add Courses" : "Courses added"}*/}
+      {/*</p>*/}
     </div>
   );
 }
