@@ -1,4 +1,5 @@
 import type { Course } from "../utils/courses";
+import { X } from "lucide-react";
 
 interface CourseListItemProps {
   course: Course;
@@ -14,7 +15,7 @@ export default function CourseListItem({
   updateCourse,
 }: CourseListItemProps) {
   return (
-    <li className="flex flex-wrap gap-4 items-center justify-between bg-gray-900 border border-gray-700 p-4 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
+    <li className="flex flex-wrap gap-4 items-center justify-between bg-gray-900 border border-gray-700 py-4 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
       <label className="gap-2 flex flex-col small-text" htmlFor="course">
         Course Name
         <input
@@ -69,6 +70,13 @@ export default function CourseListItem({
           <option value="6">6</option>
         </select>
       </label>
+      <button>
+        <X
+          className={
+            "text-gray-700 border border-transparent cursor-pointer hover:border-red-500 hover:text-red-500 transition-colors duration-300 ease-in-out rounded-md size-8"
+          }
+        />
+      </button>
     </li>
   );
 }
