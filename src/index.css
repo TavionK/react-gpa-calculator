@@ -2,6 +2,7 @@
 
 @theme {
   --color-charged-yellow: oklch(91% 0.2 128);
+  --color-charged-yellow-dark: oklch(80% 0.2 128);
 }
 
 @layer base {
