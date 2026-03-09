@@ -27,6 +27,10 @@ export default function CoursesList({ courses, setCourses }: CourseListProps) {
     );
   }
 
+  function clearAllCourses(): void {
+    setCourses([]);
+  }
+
   return (
     <section className="mt-10">
       <div className="flex justify-between items-center my-4">
@@ -48,12 +52,20 @@ export default function CoursesList({ courses, setCourses }: CourseListProps) {
           ))}
         </ul>
       </section>
-      <button
-        onClick={handleAddCourse}
-        className="cursor-pointer p-4 rounded-md w-full mt-4 border border-dashed text-gray-700 border-gray-700 hover:text-charged-yellow hover:border-charged-yellow transition-colors duration-300 ease-in-out"
-      >
-        Add Course
-      </button>
+      <div className="flex gap-4 mt-4">
+        <button
+          onClick={handleAddCourse}
+          className="basis-3/4 cursor-pointer p-4 rounded-md border border-dashed text-gray-700 border-gray-700 hover:text-charged-yellow hover:border-charged-yellow transition-colors duration-300 ease-in-out"
+        >
+          Add Course
+        </button>
+        <button
+          onClick={clearAllCourses}
+          className="basis-1/4 cursor-pointer rounded-md p-4 bg-gray-950 border border-gray-600 text-gray-600 hover:border-red-500 hover:text-red-500 transition-colors duration-300 ease-in-out"
+        >
+          Clear All
+        </button>
+      </div>
     </section>
   );
 }
