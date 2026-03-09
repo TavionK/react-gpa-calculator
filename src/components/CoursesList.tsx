@@ -41,17 +41,25 @@ export default function CoursesList({ courses, setCourses }: CourseListProps) {
         </p>
       </div>
       <section aria-label="Course List">
-        <ul className="flex flex-col gap-4">
-          {courses.map((course: Course) => (
-            <CourseListItem
-              key={course.id}
-              updateCourse={updateCourse}
-              course={course}
-              courses={courses}
-              setCourses={setCourses}
-            />
-          ))}
-        </ul>
+        {courses.length === 0 ? (
+          <p className="text-center text-gray-600  my-10 leading-8">
+            <span className="text-4xl">📚</span>
+            <br />
+            No courses added. Add one to get started.
+          </p>
+        ) : (
+          <ul className="flex flex-col gap-4">
+            {courses.map((course: Course) => (
+              <CourseListItem
+                key={course.id}
+                updateCourse={updateCourse}
+                course={course}
+                courses={courses}
+                setCourses={setCourses}
+              />
+            ))}
+          </ul>
+        )}
       </section>
       <div className="flex gap-4 my-4">
         <button
