@@ -9,8 +9,16 @@ function App() {
 
   return (
     <main className="max-w-lg mx-auto px-4 mt-10">
-      <h1 className="text-3xl">GPA Calculator</h1>
-      <GpaDisplay courses={courses} />
+      <div className="flex flex-col items-start gap-4 sm:flex-row sm:justify-between">
+        <div>
+          <h1 className="text-3xl font-bold font-serif italic mb-2">
+            Grade Point <br />{" "}
+            <span className="text-charged-yellow">Average</span>
+          </h1>
+          <p className="small-text">4.0 Scale - Credit Weighted</p>
+        </div>
+        <GpaDisplay courses={courses} />
+      </div>
       <Form setCourses={setCourses} />
       <hr className="my-4 border-gray-500" />
       <CoursesList courses={courses} />
