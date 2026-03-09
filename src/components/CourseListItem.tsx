@@ -66,7 +66,7 @@ export default function CourseListItem({
         Credits
         <select
           id="credits"
-          className="text-white bg-gray-800 border border-gray-700 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-charged-yellow"
+          className="text-white bg-gray-800 border border-gray-700 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-charged-yellow "
           value={course.credits}
           onChange={(e): void =>
             updateCourse(course.id, "credits", Number(e.target.value))
@@ -79,14 +79,16 @@ export default function CourseListItem({
         </select>
       </label>
       <button
-        className="row-start-1 col-start-2 place-self-end"
+        type="button"
+        aria-label={`Delete ${course.course} course`}
+        className="row-start-1 col-start-2 place-self-end cursor-pointer border border-transparent hover:border-red-500 hover:text-red-500 focus-visible:outline-none focus-visible:ring-2  focus-visible:ring-red-500 focus-visible:text-red-500 rounded-md group transition-colors duration-300 ease-in-out"
         onClick={() => {
           setCourses(deleteCourse(courses, course.id));
         }}
       >
         <X
           className={
-            "text-gray-700 border border-transparent cursor-pointer hover:border-red-500 hover:text-red-500 transition-colors duration-300 ease-in-out rounded-md size-8"
+            "text-gray-700 group-hover:text-red-500 group-focus-visible:text-red-500 border border-transparent rounded-md size-8"
           }
         />
       </button>
