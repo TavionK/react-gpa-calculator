@@ -1,4 +1,5 @@
 import { type Course, getTotalCredits } from "../utils/courses.ts";
+import CourseListItem from "./CourseListItem.tsx";
 
 interface CourseListProps {
   courses: Course[];
@@ -14,6 +15,19 @@ export default function CoursesList({ courses, setCourses }: CourseListProps) {
     ]);
   }
 
+  function updateCourse(
+    id: string,
+    field: keyof Course,
+    value: string | number,
+  ): void {
+    setCourses(
+      courses.map(
+        (course: Course): Course =>
+          course.id === id ? { ...course, [field]: value } : course,
+      ),
+    );
+  }
+
   return (
     <section className="mt-10">
       <div className="flex justify-between items-center my-4">
@@ -23,22 +37,19 @@ export default function CoursesList({ courses, setCourses }: CourseListProps) {
         </p>
       </div>
       <section aria-label="Course List">
-        <ul>
+        <ul className="flex flex-col gap-4">
           {courses.map((course: Course) => (
-            <li
+            <CourseListItem
               key={course.id}
-              className="border border-gray-700 rounded-md bg-gray-900 p-4 flex justify-between items-center"
-            >
-              <p className="">{course.course}</p>
-              <p className="bg-gray-600">{course.grade}</p>
-              <p className="bg-gray-600 px-4 rounded-md">{course.credits}</p>
-            </li>
+              updateCourse={updateCourse}
+              course={course}
+            />
           ))}
         </ul>
       </section>
       <button
         onClick={handleAddCourse}
-        className="cursor-pointer p-4 rounded-md w-full mt-4 border border-dashed text-gray-700 border-gray-700 hover:text-charged-yellow hover:border-charged-yellow"
+        className="cursor-pointer p-4 rounded-md w-full mt-4 border border-dashed text-gray-700 border-gray-700 hover:text-charged-yellow hover:border-charged-yellow transition-colors duration-300 ease-in-out"
       >
         Add Course
       </button>
