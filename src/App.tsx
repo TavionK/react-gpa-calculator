@@ -2,12 +2,13 @@ import { useState } from "react";
 import { type Course } from "./utils/courses";
 import CoursesList from "./components/CoursesList.tsx";
 import GpaDisplay from "./components/GpaDisplay.tsx";
+import ScaleInfo from "./components/ScaleInfo.tsx";
 
 function App() {
   const [courses, setCourses] = useState<Course[]>([]);
 
   return (
-    <main className="max-w-3xl mx-auto px-4 mt-10">
+    <main className="max-w-3xl mx-auto px-4 pt-20">
       <div className="flex flex-col items-start gap-4 sm:flex-row sm:justify-between">
         <div>
           <h1 className="text-5xl leading-10 font-bold font-serif italic mb-2">
@@ -19,6 +20,7 @@ function App() {
         <GpaDisplay courses={courses} />
       </div>
       <CoursesList courses={courses} setCourses={setCourses} />
+      <ScaleInfo />
     </main>
   );
 }
