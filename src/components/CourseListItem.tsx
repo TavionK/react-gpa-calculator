@@ -20,7 +20,7 @@ export default function CourseListItem({
   setCourses,
 }: CourseListItemProps) {
   return (
-    <li className="grid grid-cols-2 grid-rows-3 md:flex md:flex-wrap gap-2 items-center justify-between bg-gray-900 border border-gray-700 py-4 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
+    <li className="grid grid-cols-2 grid-rows-3 md:flex md:flex-wrap gap-2 bg-gray-900 border border-gray-700 py-4 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
       <label
         className="col-span-2 gap-2 flex flex-col small-text md:flex-1"
         htmlFor="course"
