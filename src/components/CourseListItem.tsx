@@ -1,6 +1,7 @@
 import type { Course } from "../utils/courses";
 import { X } from "lucide-react";
 import { deleteCourse } from "../utils/courses";
+import { useRef, useEffect } from "react";
 
 interface CourseListItemProps {
   course: Course;
@@ -19,6 +20,12 @@ export default function CourseListItem({
   courses,
   setCourses,
 }: CourseListItemProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+
   return (
     <li className="grid grid-cols-2 grid-rows-3 md:flex md:flex-wrap gap-2 bg-gray-900 border border-gray-700 py-4 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
       <label
@@ -27,6 +34,7 @@ export default function CourseListItem({
       >
         Course Name
         <input
+          ref={inputRef}
           id="course"
           className="h-10 text-white text-lg bg-gray-800 border border-gray-700 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-charged-yellow"
           type="text"
