@@ -1,12 +1,56 @@
-# React + Vite
+# GPA Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, weighted GPA calculator built with React and TypeScript, featuring a dark UI styled with Tailwind CSS.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** – Component-based UI with hooks (`useState`, `useEffect`, `useRef`)
+- **TypeScript** – Fully typed components, props, and utility functions
+- **Vite** – Fast dev server and build tooling
+- **Tailwind CSS v4** – Utility-first styling with a dark theme
+- **Lucide React** – Lightweight icon set
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Add multiple courses with name, letter grade, and credit hours
+- Weighted GPA calculation based on the 4.0 scale
+- Live GPA display that updates as you add or edit courses
+- Delete individual courses or clear all at once
+- Auto-focuses the course name input when a new course is added
+- GPA scale breakdown explaining how the calculation works
+
+## Live Demo
+
+[tavion-gpa-calculator.netlify.app](https://tavion-gpa-calculator.netlify.app)
+
+## Screenshot
+
+![Screenshot of the GPA Calculator app](./public/screenshot.png)
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── CourseListItem.tsx   # Individual course row with inputs and delete button
+│   ├── CoursesList.tsx      # Course list, add/clear controls, and credit summary
+│   ├── GpaDisplay.tsx       # Live GPA readout
+│   └── ScaleInfo.tsx        # Explanation of the GPA calculation method
+├── utils/
+│   └── courses.ts           # Pure functions for GPA logic + Course interface
+└── App.tsx                  # Root component, state management
+```
+
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+ 
+# Run dev server
+npm run dev
+ 
+# Build for production
+npm run build
+```
