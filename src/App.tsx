@@ -8,7 +8,7 @@ function App() {
   const [courses, setCourses] = useState<Course[]>([]);
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-8">
+    <main className="min-h-dvh max-w-3xl mx-auto px-4 py-8">
       <div className="flex flex-col items-start gap-4 sm:flex-row sm:justify-between">
         <div>
           <h1 className="text-5xl leading-10 font-bold font-serif italic mb-2">
