@@ -10,7 +10,7 @@ function App() {
   return (
     <main className="min-h-dvh max-w-3xl mx-auto px-4 py-8">
       <div className="flex flex-col items-start gap-4 sm:flex-row sm:justify-between">
-        <div>
+        <div className="sm:basis-3/4">
           <h1 className="text-5xl leading-10 font-bold font-serif italic mb-2">
             Grade Point <br /> <span className="text-blue-500">Average</span>
           </h1>
