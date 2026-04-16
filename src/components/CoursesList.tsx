@@ -42,7 +42,7 @@ export default function CoursesList({ courses, setCourses }: CourseListProps) {
       </div>
       <section aria-label="Course List">
         {courses.length === 0 ? (
-          <div className="bg-gray-200 rounded-2xl p-4 border border-dashed border-gray-400">
+          <div className="bg-gray-200 rounded-2xl p-4 border border-dashed border-gray-400 flex flex-col items-center">
             <p className="text-center text-gray-600  my-10 leading-8">
               <span className="text-4xl">📚</span>
               <br />
@@ -50,7 +50,7 @@ export default function CoursesList({ courses, setCourses }: CourseListProps) {
             </p>
             <button
               onClick={handleAddCourse}
-              className="w-full mb-4 flex justify-center gap-2 cursor-pointer p-4 sm:p-4 rounded-md bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4"
+              className="w-full mb-4 flex justify-center gap-2 cursor-pointer p-4 sm:p-4 sm:w-1/2 rounded-md bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4"
             >
               <Plus />
               Add Your First Course
