@@ -23,9 +23,11 @@ A clean, weighted GPA calculator built with React and TypeScript, featuring a da
 
 [tavion-gpa-calculator.netlify.app](https://tavion-gpa-calculator.netlify.app)
 
-## Screenshot
-
+## Screenshots
+### Empty state
 ![Screenshot of the GPA Calculator app](./public/screenshot.png)
+### Courses added
+![Screenshot of the GPA Calculator app](./public/screenshot2.png)
 
 ## Project Structure
 
