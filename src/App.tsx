@@ -12,8 +12,7 @@ function App() {
       <div className="flex flex-col items-start gap-4 sm:flex-row sm:justify-between">
         <div>
           <h1 className="text-5xl leading-10 font-bold font-serif italic mb-2">
-            Grade Point <br />{" "}
-            <span className="text-charged-yellow">Average</span>
+            Grade Point <br /> <span className="text-blue-500">Average</span>
           </h1>
           <p className="small-text">4.0 Scale - Credit Weighted</p>
         </div>
