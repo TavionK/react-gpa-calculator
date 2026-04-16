@@ -64,14 +64,14 @@ export default function CoursesList({ courses, setCourses }: CourseListProps) {
       <div className="flex gap-4 my-4">
         <button
           onClick={handleAddCourse}
-          className="flex justify-center gap-2 basis-3/4 cursor-pointer p-2 sm:p-4 rounded-md bg-blue-200 hover:bg-blue-500 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4"
+          className="flex justify-center gap-2 basis-3/4 cursor-pointer p-2 sm:p-4 rounded-md bg-blue-200 hover:bg-blue-400 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4"
         >
           <Plus />
           Add Course
         </button>
         <button
           onClick={clearAllCourses}
-          className="basis-1/4 cursor-pointer rounded-md p-2 sm:p-4 border-2 border-gray-300 text-gray-600 hover:text-red-500 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:text-red-500 focus-visible:border-transparent focus-visible:ring-offset-4"
+          className="basis-1/4 cursor-pointer rounded-md p-2 sm:p-4 border-2 border-gray-300 text-gray-600 hover:text-red-500 hover:border-red-500 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:border-red-500 focus-visible:text-red-500"
         >
           Clear All
         </button>
