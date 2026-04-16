@@ -11,13 +11,13 @@ export default function GpaDisplay({ courses }: GpaDisplayProps) {
       <div className="border-r border-white pr-10">
         <p className="small-text">Current GPA</p>
         <p className="text-4xl font-bold">
-          {calculateGpa(courses) === "NaN" ? "—" : calculateGpa(courses)}
+          {calculateGpa(courses) === "NaN" ? "0.00" : calculateGpa(courses)}
         </p>
       </div>
       <div>
         <p className="small-text">Total Credits</p>
         <p className="text-4xl font-bold">
-          {getTotalCredits(courses) === 0 ? "—" : getTotalCredits(courses)}
+          {getTotalCredits(courses) === 0 ? "0" : getTotalCredits(courses)}
         </p>
       </div>
     </div>
