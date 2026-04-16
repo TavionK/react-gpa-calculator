@@ -27,7 +27,7 @@ export default function CourseListItem({
   }, []);
 
   return (
-    <li className="grid grid-cols-2 grid-rows-3 md:flex md:flex-wrap gap-2 bg-gray-900 border border-gray-700 py-4 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
+    <li className="grid grid-cols-2 grid-rows-3 md:flex md:flex-wrap gap-2 bg-white py-4 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
       <label
         className="col-span-2 gap-2 flex flex-col small-text md:flex-1"
         htmlFor="course"
@@ -36,7 +36,7 @@ export default function CourseListItem({
         <input
           ref={inputRef}
           id="course"
-          className="h-10 text-white text-lg bg-gray-800 border border-gray-700 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-charged-yellow"
+          className="h-10 text-lg bg-gray-200 rounded-md px-2 py-1 focus:outline-none focus:border-none focus:ring-2 focus:ring-blue-500"
           type="text"
           value={course.course}
           placeholder="Course Name"
@@ -52,7 +52,7 @@ export default function CourseListItem({
         Grade
         <select
           id="grade"
-          className="h-10 text-white text-lg bg-gray-800 border border-gray-700 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-charged-yellow"
+          className="h-10 text-lg bg-gray-200 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
           name=""
           value={course.grade}
           onChange={(e): void =>
@@ -80,7 +80,7 @@ export default function CourseListItem({
         Credits
         <select
           id="credits"
-          className="h-10 text-white text-lg bg-gray-800 border border-gray-700 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-charged-yellow "
+          className="h-10 text-lg bg-gray-200 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={course.credits}
           onChange={(e): void =>
             updateCourse(course.id, "credits", Number(e.target.value))
