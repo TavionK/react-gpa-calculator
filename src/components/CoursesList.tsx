@@ -42,40 +42,51 @@ export default function CoursesList({ courses, setCourses }: CourseListProps) {
       </div>
       <section aria-label="Course List">
         {courses.length === 0 ? (
-          <p className="text-center text-gray-600  my-10 leading-8">
-            <span className="text-4xl">📚</span>
-            <br />
-            No courses added. Add one to get started.
-          </p>
+          <div className="bg-gray-200 rounded-2xl p-4 border border-dashed border-gray-400">
+            <p className="text-center text-gray-600  my-10 leading-8">
+              <span className="text-4xl">📚</span>
+              <br />
+              No courses added. Add one to get started.
+            </p>
+            <button
+              onClick={handleAddCourse}
+              className="w-full mb-4 flex justify-center gap-2 cursor-pointer p-4 sm:p-4 rounded-md bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4"
+            >
+              <Plus />
+              Add Your First Course
+            </button>
+          </div>
         ) : (
-          <ul className="flex flex-col gap-4">
-            {courses.map((course: Course) => (
-              <CourseListItem
-                key={course.id}
-                updateCourse={updateCourse}
-                course={course}
-                courses={courses}
-                setCourses={setCourses}
-              />
-            ))}
-          </ul>
+          <div>
+            <ul className="flex flex-col gap-4">
+              {courses.map((course: Course) => (
+                <CourseListItem
+                  key={course.id}
+                  updateCourse={updateCourse}
+                  course={course}
+                  courses={courses}
+                  setCourses={setCourses}
+                />
+              ))}
+            </ul>
+            <div className="flex gap-4 my-4">
+              <button
+                onClick={handleAddCourse}
+                className="flex justify-center gap-2 basis-3/4 cursor-pointer p-2 sm:p-4 rounded-md bg-blue-200 hover:bg-blue-400 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4"
+              >
+                <Plus />
+                Add Course
+              </button>
+              <button
+                onClick={clearAllCourses}
+                className="basis-1/4 cursor-pointer rounded-md p-2 sm:p-4 border-2 border-gray-300 text-gray-600 hover:text-red-500 hover:border-red-500 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:border-red-500 focus-visible:text-red-500"
+              >
+                Clear All
+              </button>
+            </div>
+          </div>
         )}
       </section>
-      <div className="flex gap-4 my-4">
-        <button
-          onClick={handleAddCourse}
-          className="flex justify-center gap-2 basis-3/4 cursor-pointer p-2 sm:p-4 rounded-md bg-blue-200 hover:bg-blue-400 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4"
-        >
-          <Plus />
-          Add Course
-        </button>
-        <button
-          onClick={clearAllCourses}
-          className="basis-1/4 cursor-pointer rounded-md p-2 sm:p-4 border-2 border-gray-300 text-gray-600 hover:text-red-500 hover:border-red-500 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:border-red-500 focus-visible:text-red-500"
-        >
-          Clear All
-        </button>
-      </div>
     </section>
   );
 }
