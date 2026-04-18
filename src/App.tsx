@@ -4,7 +4,8 @@ import CoursesList from "./components/CoursesList.tsx";
 import GpaDisplay from "./components/GpaDisplay.tsx";
 import ScaleInfo from "./components/ScaleInfo.tsx";
 import Header from "./components/Header.tsx";
-import FullGpaDisplay from "./components/FullGpaDisplay.tsx";
+import GpaTrend from "./components/GpaTrend.tsx";
+import OverallGpaDisplay from "./components/OverallGpaDisplay.tsx";
 
 function App() {
   const [courses, setCourses] = useState<Course[]>([]);
@@ -22,7 +23,10 @@ function App() {
         setSemesters={setSemesters}
         semesters={semesters}
       />
-      <FullGpaDisplay semesters={semesters} />
+      <div className="flex justify-between gap-2">
+        <OverallGpaDisplay semesters={semesters} />
+        <GpaTrend semesters={semesters} courses={courses} />
+      </div>
       <ScaleInfo />
     </main>
   );
