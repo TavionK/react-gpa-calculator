@@ -26,10 +26,6 @@ const CourseGradePointConversion: Record<string, number> = {
   F: 0,
 };
 
-export function addCourse(courseArr: Course[], newCourse: Course): Course[] {
-  return [...courseArr, newCourse];
-}
-
 export function getTotalCredits(courseArr: Course[]): number {
   return courseArr.reduce(
     (total: number, course: Course): number => total + course.credits,
@@ -46,31 +42,38 @@ export function getTotalGradePoints(courseArr: Course[]): number {
   return totalGradePoints;
 }
 
+export function deleteCourse(courseArr: Course[], courseId: string): Course[] {
+  return courseArr.filter((course: Course): boolean => course.id !== courseId);
+}
+
 export function calculateGpa(courseArr: Course[]): string {
   let totalCredits: number = getTotalCredits(courseArr);
   let totalGradePoints: number = getTotalGradePoints(courseArr);
   return (totalGradePoints / totalCredits).toFixed(2);
 }
 
-export function deleteCourse(courseArr: Course[], courseId: string): Course[] {
-  return courseArr.filter((course: Course): boolean => course.id !== courseId);
-}
-
-// SEMESTER GPA FUNCTIONS
-export function calculateFullGpa(semesters: Semester[]): string {
+// This function calculates the GPA for all the previous semesters, not including the current semester
+export function calculateOverallGpa(semesters: Semester[]): string {
   let totalCredits: number = 0;
   let totalGradePoints: number = 0;
   for (const semester of semesters) {
     totalGradePoints += semester.totalGradePoints;
     totalCredits += semester.totalCredits;
   }
-  console.log(totalCredits, totalGradePoints);
   return (totalGradePoints / totalCredits).toFixed(2);
 }
 
-export function calculateSemesterGpa(
-  credits: number,
-  gradePoints: number,
+// Calculates the GPA for all previous semesters, including the current semester
+export function calculateCompleteGpa(
+  courseArr: Course[],
+  semesters: Semester[],
 ): string {
-  return (gradePoints / credits).toFixed(2);
+  let totalCredits: number = getTotalCredits(courseArr);
+  let totalGradePoints: number = getTotalGradePoints(courseArr);
+  for (const semester of semesters) {
+    totalGradePoints += semester.totalGradePoints;
+    totalCredits += semester.totalCredits;
+  }
+
+  return (totalGradePoints / totalCredits).toFixed(2);
 }
