@@ -52,13 +52,25 @@ export function calculateGpa(courseArr: Course[]): string {
   return (totalGradePoints / totalCredits).toFixed(2);
 }
 
+export function deleteCourse(courseArr: Course[], courseId: string): Course[] {
+  return courseArr.filter((course: Course): boolean => course.id !== courseId);
+}
+
+// SEMESTER GPA FUNCTIONS
+export function calculateFullGpa(semesters: Semester[]): string {
+  let totalCredits: number = 0;
+  let totalGradePoints: number = 0;
+  for (const semester of semesters) {
+    totalGradePoints += semester.totalGradePoints;
+    totalCredits += semester.totalCredits;
+  }
+  console.log(totalCredits, totalGradePoints);
+  return (totalGradePoints / totalCredits).toFixed(2);
+}
+
 export function calculateSemesterGpa(
   credits: number,
   gradePoints: number,
 ): string {
   return (gradePoints / credits).toFixed(2);
-}
-
-export function deleteCourse(courseArr: Course[], courseId: string): Course[] {
-  return courseArr.filter((course: Course): boolean => course.id !== courseId);
 }
