@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { type Course } from "./utils/courses";
+import { type Course, type Semester } from "./utils/courses";
 import CoursesList from "./components/CoursesList.tsx";
 import GpaDisplay from "./components/GpaDisplay.tsx";
 import ScaleInfo from "./components/ScaleInfo.tsx";
+import PreviousSemester from "./components/PreviousSemester.tsx";
 
 function App() {
   const [courses, setCourses] = useState<Course[]>([]);
+  const [semesters, setSemesters] = useState<Semester[]>([]);
 
   return (
     <main className="min-h-dvh max-w-3xl mx-auto px-4 py-8">
@@ -18,7 +20,13 @@ function App() {
         </div>
         <GpaDisplay courses={courses} />
       </div>
-      <CoursesList courses={courses} setCourses={setCourses} />
+      <CoursesList
+        courses={courses}
+        setCourses={setCourses}
+        setSemesters={setSemesters}
+        semesters={semesters}
+      />
+      <PreviousSemester prevSemester={semesters} />
       <ScaleInfo />
     </main>
   );

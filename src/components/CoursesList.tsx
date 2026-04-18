@@ -1,13 +1,37 @@
-import { type Course, getTotalCredits } from "../utils/courses.ts";
+import {
+  type Course,
+  getTotalCredits,
+  getTotalGradePoints,
+  type Semester,
+} from "../utils/courses.ts";
 import CourseListItem from "./CourseListItem.tsx";
 import { Plus } from "lucide-react";
 
 interface CourseListProps {
   courses: Course[];
+  semesters: Semester[];
   setCourses: (courses: Course[]) => void;
+  setSemesters: (semester: Semester[]) => void;
 }
 
-export default function CoursesList({ courses, setCourses }: CourseListProps) {
+export default function CoursesList({
+  courses,
+  semesters,
+  setCourses,
+  setSemesters,
+}: CourseListProps) {
+  function handleSaveSemester() {
+    setSemesters([
+      ...semesters,
+      {
+        id: crypto.randomUUID(),
+        totalGradePoints: getTotalGradePoints(courses),
+        totalCredits: getTotalCredits(courses),
+      },
+    ]);
+    setCourses([]); // Clear courses after saving
+  }
+
   function handleAddCourse() {
     setCourses([
       ...courses,
@@ -87,6 +111,12 @@ export default function CoursesList({ courses, setCourses }: CourseListProps) {
                 Clear All
               </button>
             </div>
+            <button
+              onClick={handleSaveSemester}
+              className="cursor-pointer px-2 py-1 bg-blue-500 rounded-md text-white"
+            >
+              Save Semester
+            </button>
           </div>
         )}
       </section>

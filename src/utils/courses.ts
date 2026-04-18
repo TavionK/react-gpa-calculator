@@ -5,6 +5,12 @@ export interface Course {
   credits: number;
 }
 
+export interface Semester {
+  id: string;
+  totalGradePoints: number;
+  totalCredits: number;
+}
+
 const CourseGradePointConversion: Record<string, number> = {
   A: 4,
   "A-": 3.7,
@@ -31,7 +37,7 @@ export function getTotalCredits(courseArr: Course[]): number {
   );
 }
 
-function getTotalGradePoints(courseArr: Course[]): number {
+export function getTotalGradePoints(courseArr: Course[]): number {
   let totalGradePoints: number = 0;
   courseArr.forEach((course: Course): void => {
     totalGradePoints +=
@@ -44,6 +50,13 @@ export function calculateGpa(courseArr: Course[]): string {
   let totalCredits: number = getTotalCredits(courseArr);
   let totalGradePoints: number = getTotalGradePoints(courseArr);
   return (totalGradePoints / totalCredits).toFixed(2);
+}
+
+export function calculateSemesterGpa(
+  credits: number,
+  gradePoints: number,
+): string {
+  return (gradePoints / credits).toFixed(2);
 }
 
 export function deleteCourse(courseArr: Course[], courseId: string): Course[] {
