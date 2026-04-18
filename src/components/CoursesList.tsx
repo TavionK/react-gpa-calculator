@@ -57,12 +57,9 @@ export default function CoursesList({
   }
 
   return (
-    <section className="mt-10">
-      <div className="flex justify-between items-center my-4">
-        <p className="font-bold text-lg uppercase">Courses</p>
-        <p className="small-text bg-blue-200 px-2 py-1 rounded-full">
-          {courses.length} courses - {getTotalCredits(courses)} credits
-        </p>
+    <section className="">
+      <div className="flex justify-between items-center my-6">
+        <p className="font-bold text-lg uppercase">Semester Overview</p>
       </div>
       <section aria-label="Course List">
         {courses.length === 0 ? (
