@@ -57,14 +57,20 @@ export default function CoursesList({
   }
 
   return (
-    <section className="">
-      <div className="flex justify-between items-center my-6">
-        <p className="font-bold text-lg uppercase">Semester Overview</p>
-      </div>
+    <section aria-labelledby="semester-overview">
+      <h2
+        className="mt-8 mb-4 font-bold text-lg uppercase"
+        id="semester-overview"
+      >
+        Semester Overview
+      </h2>
+
       <section aria-label="Course List">
         {courses.length === 0 ? (
           <div className="bg-gray-200 rounded-2xl p-4 border border-dashed border-gray-400 flex flex-col items-center text-center">
-            <p className="text-4xl mt-4">📚</p>
+            <p className="text-4xl mt-4" aria-hidden="true">
+              📚
+            </p>
             <p className="text-xl font-bold my-4">
               Ready to calculate your GPA?
             </p>
