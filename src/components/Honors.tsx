@@ -1,0 +1,27 @@
+import { calculatePrevGpa, type Semester } from "../utils/courses.ts";
+
+interface HonorsProps {
+  semesters: Semester[];
+}
+
+export default function Honors({ semesters }: HonorsProps) {
+  function calculateHonors(semesters: Semester[]): string {
+    let gpa: number = Number(calculatePrevGpa(semesters));
+    if (gpa === 4.0) {
+      return "Summa Cum Laude";
+    } else if (gpa >= 3.8) {
+      return "Magna Cum Laude";
+    } else if (gpa >= 3.5) {
+      return "Cum Laude";
+    } else {
+      return "No Honors";
+    }
+  }
+
+  return (
+    <section className="mt-15 bg-gray-200 rounded-md overflow-hidden border border-gray-300">
+      <p className="small-text">Honors Track</p>
+      <p className="text-2xl font-bold">{calculateHonors(semesters)}</p>
+    </section>
+  );
+}

@@ -6,6 +6,7 @@ import ScaleInfo from "./components/ScaleInfo.tsx";
 import Header from "./components/Header.tsx";
 import GpaTrend from "./components/GpaTrend.tsx";
 import OverallGpaDisplay from "./components/OverallGpaDisplay.tsx";
+import Honors from "./components/Honors.tsx";
 
 function App() {
   const [courses, setCourses] = useState<Course[]>([]);
@@ -27,6 +28,7 @@ function App() {
         <OverallGpaDisplay semesters={semesters} />
         <GpaTrend semesters={semesters} courses={courses} />
       </div>
+      <Honors semesters={semesters} />
       <ScaleInfo />
     </main>
   );
