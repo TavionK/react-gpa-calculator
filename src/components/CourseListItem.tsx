@@ -29,7 +29,7 @@ export default function CourseListItem({
   return (
     <li className="relative flex flex-wrap gap-2 bg-white py-4 pt-10 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
       <label
-        className="w-full gap-2 flex flex-col small-text sm:flex-1"
+        className="w-full gap-2 flex flex-col small-text sm:w-auto sm:flex-1"
         htmlFor="course"
       >
         Course Name
