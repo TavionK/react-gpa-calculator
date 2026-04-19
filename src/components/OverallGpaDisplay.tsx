@@ -1,4 +1,4 @@
-import { calculateOverallGpa, type Semester } from "../utils/courses.ts";
+import { calculatePrevGpa, type Semester } from "../utils/courses.ts";
 
 interface FullGpaDisplayProps {
   semesters: Semester[];
@@ -12,7 +12,7 @@ export default function OverallGpaDisplay({ semesters }: FullGpaDisplayProps) {
         <p>0.00</p>
       ) : (
         <div className="flex justify-between text-2xl font-bold">
-          {calculateOverallGpa(semesters)}
+          {calculatePrevGpa(semesters)}
         </div>
       )}
     </section>
