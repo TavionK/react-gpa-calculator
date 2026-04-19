@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { type Course, type Semester } from "./utils/courses";
 import CoursesList from "./components/CoursesList.tsx";
-import GpaDisplay from "./components/GpaDisplay.tsx";
+import SemesterGpaDisplay from "./components/SemesterGpaDisplay.tsx";
 import ScaleInfo from "./components/ScaleInfo.tsx";
 import Header from "./components/Header.tsx";
 import GpaTrend from "./components/GpaTrend.tsx";
@@ -15,7 +15,7 @@ function App() {
     <main className="min-h-dvh max-w-3xl mx-auto px-4 py-8">
       <div className="flex flex-col items-start gap-4 sm:flex-row sm:justify-between">
         <Header />
-        <GpaDisplay courses={courses} />
+        <SemesterGpaDisplay courses={courses} />
       </div>
       <CoursesList
         courses={courses}
