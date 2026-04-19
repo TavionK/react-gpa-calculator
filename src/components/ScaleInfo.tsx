@@ -1,6 +1,6 @@
 export default function ScaleInfo() {
   return (
-    <section className="mt-15 bg-gray-200 rounded-md overflow-hidden border border-gray-300">
+    <section className="my-8 bg-gray-200 rounded-md overflow-hidden border border-gray-300">
       <h2 className="text-lg uppercase font-bold bg-gray-300 p-4 mb-2">
         How is my GPA calculated?
       </h2>

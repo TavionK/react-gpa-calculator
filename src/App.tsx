@@ -24,7 +24,7 @@ function App() {
         setSemesters={setSemesters}
         semesters={semesters}
       />
-      <div className="flex justify-between gap-2">
+      <div className="flex justify-between my-4 gap-2">
         <OverallGpaDisplay semesters={semesters} />
         <GpaTrend semesters={semesters} courses={courses} />
       </div>

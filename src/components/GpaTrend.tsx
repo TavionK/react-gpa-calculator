@@ -42,7 +42,7 @@ export default function GpaTrend({ semesters, courses }: GpaTrendProps) {
   }
 
   return (
-    <section className="w-full mt-15 bg-gray-200 rounded-md overflow-hidden border border-gray-300 p-4 flex flex-col justify-end">
+    <section className="w-full bg-gray-200 rounded-md overflow-hidden border border-gray-300 p-4 flex flex-col justify-end">
       {trendDirection()}
       <h2 className="small-text uppercase">GPA Trend</h2>
       {semesters.length === 0 || courses.length === 0 ? (

@@ -19,7 +19,7 @@ export default function Honors({ semesters }: HonorsProps) {
   }
 
   return (
-    <section className="mt-15 bg-gray-200 rounded-md overflow-hidden border border-gray-300">
+    <section className="w-full p-4 bg-gray-200 rounded-md overflow-hidden border border-gray-300">
       <p className="small-text">Honors Track</p>
       <p className="text-2xl font-bold">{calculateHonors(semesters)}</p>
     </section>
