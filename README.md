@@ -16,6 +16,9 @@ A clean, weighted GPA calculator built with React and TypeScript, featuring a da
 - Weighted GPA calculation based on the 4.0 scale
 - Live GPA display that updates as you add or edit courses
 - Delete individual courses or clear all at once
+- Save completed semesters to track progress over time
+- View overall GPA across all saved semesters
+- GPA trend indicator showing whether your current semester will raise or lower your cumulative GPA
 - Auto-focuses the course name input when a new course is added
 - GPA scale breakdown explaining how the calculation works
 
