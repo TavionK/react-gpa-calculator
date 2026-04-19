@@ -46,7 +46,7 @@ export default function CourseListItem({
         />
       </label>
       <label
-        className="w-1/2 flex-1 gap-2 flex flex-col small-text sm:flex-2"
+        className="flex-1 gap-2 flex flex-col small-text sm:flex-2"
         htmlFor="grade"
       >
         Grade
@@ -74,7 +74,7 @@ export default function CourseListItem({
         </select>
       </label>
       <label
-        className="w-1/2 flex-1 gap-2 flex flex-col small-text sm:flex-2"
+        className="flex-1 gap-2 flex flex-col small-text sm:flex-2"
         htmlFor="credits"
       >
         Credits
