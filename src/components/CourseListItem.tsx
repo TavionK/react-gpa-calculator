@@ -27,9 +27,9 @@ export default function CourseListItem({
   }, []);
 
   return (
-    <li className="grid grid-cols-2 grid-rows-3 md:flex md:flex-wrap gap-2 bg-white py-4 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
+    <li className="relative flex flex-wrap gap-2 bg-white py-4 pt-10 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
       <label
-        className="col-span-2 gap-2 flex flex-col small-text md:flex-1"
+        className="w-full gap-2 flex flex-col small-text sm:flex-1"
         htmlFor="course"
       >
         Course Name
@@ -46,7 +46,7 @@ export default function CourseListItem({
         />
       </label>
       <label
-        className="gap-2 flex flex-col small-text md:flex-2"
+        className="w-1/2 flex-1 gap-2 flex flex-col small-text sm:flex-2"
         htmlFor="grade"
       >
         Grade
@@ -74,7 +74,7 @@ export default function CourseListItem({
         </select>
       </label>
       <label
-        className="gap-2 flex flex-col small-text md:flex-2"
+        className="w-1/2 flex-1 gap-2 flex flex-col small-text sm:flex-2"
         htmlFor="credits"
       >
         Credits
@@ -95,7 +95,7 @@ export default function CourseListItem({
       <button
         type="button"
         aria-label={`Delete ${course.course} course`}
-        className="h-fit row-start-1 col-start-2 place-self-end cursor-pointer border border-transparent hover:border-red-500 hover:text-red-500 focus-visible:outline-none focus-visible:ring-2  focus-visible:ring-red-500 focus-visible:text-red-500 rounded-md group transition-colors duration-300 ease-in-out"
+        className="absolute top-2 right-2 cursor-pointer border border-transparent hover:border-red-500 hover:text-red-500 focus-visible:outline-none focus-visible:ring-2  focus-visible:ring-red-500 focus-visible:text-red-500 rounded-md group transition-colors duration-300 ease-in-out"
         onClick={() => {
           setCourses(deleteCourse(courses, course.id));
         }}
