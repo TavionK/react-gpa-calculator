@@ -32,9 +32,9 @@ export default function GpaTrend({ semesters, courses }: GpaTrendProps) {
     );
     if (courses.length > 0 && semesters.length > 0) {
       if (comparison.startsWith("-")) {
-        return <TrendingDown color="red" />;
+        return <TrendingDown aria-hidden="true" color="red" />;
       } else if (comparison.startsWith("+")) {
-        return <TrendingUp color="green" />;
+        return <TrendingUp aria-hidden="true" color="green" />;
       }
     } else {
       return;
@@ -42,19 +42,29 @@ export default function GpaTrend({ semesters, courses }: GpaTrendProps) {
   }
 
   return (
-    <section className="w-full bg-gray-200 rounded-md overflow-hidden border border-gray-300 p-4 flex flex-col justify-end">
+    <section
+      aria-label="GPA trend"
+      className="w-full bg-gray-200 rounded-md overflow-hidden border border-gray-300 p-4 flex flex-col justify-end"
+    >
       {trendDirection()}
-      <h2 className="small-text uppercase">GPA Trend</h2>
-      {semesters.length === 0 || courses.length === 0 ? (
-        <p className="font-bold text-2xl">—</p>
-      ) : (
-        <p className="text-2xl font-bold">
-          {compareGpa(
-            calculatePrevGpa(semesters),
-            calculateCompleteGpa(courses, semesters),
-          )}
-        </p>
-      )}
+      <dl>
+        <dt className="small-text uppercase">GPA Trend</dt>
+        {semesters.length === 0 || courses.length === 0 ? (
+          <dd
+            aria-label="No trend data available"
+            className="font-bold text-2xl"
+          >
+            —
+          </dd>
+        ) : (
+          <dd className="text-2xl font-bold">
+            {compareGpa(
+              calculatePrevGpa(semesters),
+              calculateCompleteGpa(courses, semesters),
+            )}
+          </dd>
+        )}
+      </dl>
     </section>
   );
 }
