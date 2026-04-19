@@ -26,7 +26,12 @@ export default function Honors({ semesters }: HonorsProps) {
       <dl>
         <dt className="small-text">Honors Eligibility</dt>
         {semesters.length === 0 ? (
-          <dd aria-label="No semesters saved yet">—</dd>
+          <dd
+            aria-label="No semesters saved yet"
+            className="text-2xl font-bold"
+          >
+            —
+          </dd>
         ) : (
           <dd className="text-2xl font-bold">{calculateHonors(semesters)}</dd>
         )}
