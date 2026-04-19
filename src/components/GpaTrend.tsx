@@ -11,8 +11,14 @@ interface GpaTrendProps {
 }
 export default function GpaTrend({ semesters, courses }: GpaTrendProps) {
   function compareGpa(overallGpa: string, newGpa: string): string {
-    // console.log(overallGpa, newGpa);
-    return (Number(newGpa) - Number(overallGpa)).toFixed(2);
+    let trend: string = String(
+      (Number(newGpa) - Number(overallGpa)).toFixed(2),
+    );
+    if (trend.startsWith("-")) {
+      return trend;
+    } else {
+      return `+${trend}`;
+    }
   }
 
   return (
