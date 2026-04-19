@@ -46,14 +46,14 @@ export function deleteCourse(courseArr: Course[], courseId: string): Course[] {
   return courseArr.filter((course: Course): boolean => course.id !== courseId);
 }
 
-export function calculateGpa(courseArr: Course[]): string {
+export function calculateSemesterGpa(courseArr: Course[]): string {
   let totalCredits: number = getTotalCredits(courseArr);
   let totalGradePoints: number = getTotalGradePoints(courseArr);
   return (totalGradePoints / totalCredits).toFixed(2);
 }
 
 // This function calculates the GPA for all the previous semesters, not including the current semester
-export function calculateOverallGpa(semesters: Semester[]): string {
+export function calculatePrevGpa(semesters: Semester[]): string {
   let totalCredits: number = 0;
   let totalGradePoints: number = 0;
   for (const semester of semesters) {
