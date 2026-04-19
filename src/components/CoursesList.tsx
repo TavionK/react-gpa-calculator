@@ -74,7 +74,7 @@ export default function CoursesList({
             </p>
             <button
               onClick={handleAddCourse}
-              className="w-full my-4 flex justify-center gap-2 cursor-pointer p-4 sm:p-4 sm:w-1/2 rounded-md bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4"
+              className="w-full my-4 flex justify-center gap-2 cursor-pointer p-4 sm:p-4 sm:w-1/2 rounded-md bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 ease-in-out a11y-rings"
             >
               <Plus />
               Add Your First Course
@@ -96,23 +96,25 @@ export default function CoursesList({
             <div className="flex flex-col sm:flex-row gap-4 my-4">
               <button
                 onClick={handleAddCourse}
-                className="flex justify-center items-center w-full gap-2 basis-3/4 cursor-pointer p-2 sm:p-4 rounded-md bg-blue-200 hover:bg-blue-400 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4"
+                className="flex justify-center items-center w-full gap-2 basis-3/4 cursor-pointer p-2 sm:p-4 rounded-md bg-blue-200 hover:bg-blue-300 transition-colors duration-300 ease-in-out a11y-rings"
               >
                 <Plus />
                 Add Course
               </button>
               <button
-                onClick={clearAllCourses}
-                className="flex justify-center items-center w-full basis-1/4 cursor-pointer rounded-md p-2 sm:p-4 border-2 border-gray-300 text-gray-600 hover:text-red-500 hover:border-red-500 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:border-red-500 focus-visible:text-red-500"
+                onClick={handleSaveSemester}
+                className="cursor-pointer w-full basis-1/4 p-2 sm:p-4 bg-blue-500 rounded-md text-white
+                hover:bg-blue-600 transition-colors duration-300 ease-in-out
+                a11y-rings"
               >
-                Clear All
+                Save Semester
               </button>
             </div>
             <button
-              onClick={handleSaveSemester}
-              className="cursor-pointer px-2 py-1 bg-blue-500 rounded-md text-white"
+              onClick={clearAllCourses}
+              className="flex justify-center items-center w-full cursor-pointer rounded-md p-2 sm:p-4 border-2 border-gray-300 text-gray-600 hover:text-red-500 hover:border-red-500 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:border-red-500 focus-visible:text-red-500"
             >
-              Save Semester
+              Clear Courses
             </button>
           </div>
         )}
