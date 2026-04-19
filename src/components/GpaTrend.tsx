@@ -42,18 +42,18 @@ export default function GpaTrend({ semesters, courses }: GpaTrendProps) {
   }
 
   return (
-    <section className="w-full mt-15 bg-gray-200 rounded-md overflow-hidden border border-gray-300 p-4">
+    <section className="w-full mt-15 bg-gray-200 rounded-md overflow-hidden border border-gray-300 p-4 flex flex-col justify-end">
       {trendDirection()}
       <h2 className="small-text uppercase">GPA Trend</h2>
       {semesters.length === 0 || courses.length === 0 ? (
-        <p>-</p>
+        <p className="font-bold text-2xl">—</p>
       ) : (
-        <div className="flex justify-between text-2xl font-bold">
+        <p className="text-2xl font-bold">
           {compareGpa(
             calculatePrevGpa(semesters),
             calculateCompleteGpa(courses, semesters),
           )}
-        </div>
+        </p>
       )}
     </section>
   );
