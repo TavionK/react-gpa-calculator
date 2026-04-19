@@ -1,5 +1,5 @@
 import {
-  calculateOverallGpa,
+  calculatePrevGpa,
   calculateCompleteGpa,
   type Course,
   type Semester,
@@ -23,7 +23,7 @@ export default function GpaTrend({ semesters, courses }: GpaTrendProps) {
       ) : (
         <div className="flex justify-between text-2xl font-bold">
           {compareGpa(
-            calculateOverallGpa(semesters),
+            calculatePrevGpa(semesters),
             calculateCompleteGpa(courses, semesters),
           )}
         </div>
