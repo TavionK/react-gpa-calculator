@@ -6,13 +6,20 @@ interface FullGpaDisplayProps {
 
 export default function OverallGpaDisplay({ semesters }: FullGpaDisplayProps) {
   return (
-    <section className="w-full bg-gray-200 rounded-md overflow-hidden border border-gray-300 p-4 flex flex-col justify-end">
-      <h2 className="small-text uppercase">Overall GPA</h2>
-      {semesters.length === 0 ? (
-        <p className="text-2xl font-bold">—</p>
-      ) : (
-        <p className="text-2xl font-bold">{calculatePrevGpa(semesters)}</p>
-      )}
+    <section
+      aria-label="Overall GPA summary"
+      className="w-full bg-gray-200 rounded-md overflow-hidden border border-gray-300 p-4 flex flex-col justify-end"
+    >
+      <dl>
+        <dt className="small-text uppercase">Overall GPA</dt>
+        {semesters.length === 0 ? (
+          <dd aria-label="No semesters saved" className="text-2xl font-bold">
+            —
+          </dd>
+        ) : (
+          <dd className="text-2xl font-bold">{calculatePrevGpa(semesters)}</dd>
+        )}
+      </dl>
     </section>
   );
 }
