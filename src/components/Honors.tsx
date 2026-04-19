@@ -6,6 +6,9 @@ interface HonorsProps {
 
 export default function Honors({ semesters }: HonorsProps) {
   function calculateHonors(semesters: Semester[]): string {
+    if (semesters.length === 0) {
+      return "—";
+    }
     let gpa: number = Number(calculatePrevGpa(semesters));
     if (gpa === 4.0) {
       return "Summa Cum Laude";
