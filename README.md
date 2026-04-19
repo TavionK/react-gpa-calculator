@@ -34,13 +34,16 @@ A clean, weighted GPA calculator built with React and TypeScript, featuring a da
 ```
 src/
 ├── components/
-│   ├── CourseListItem.tsx   # Individual course row with inputs and delete button
-│   ├── CoursesList.tsx      # Course list, add/clear controls, and credit summary
-│   ├── SemesterGpaDisplay.tsx       # Live GPA readout
-│   └── ScaleInfo.tsx        # Explanation of the GPA calculation method
+│   ├── CourseListItem.tsx       # Individual course row with inputs and delete button
+│   ├── CoursesList.tsx          # Course list, add/clear/save controls, and credit summary
+│   ├── GpaTrend.tsx             # Displays GPA trend with up/down indicator
+│   ├── Header.tsx               # App title and scale info header
+│   ├── OverallGpaDisplay.tsx    # Shows cumulative GPA across all semesters
+│   ├── SemesterGpaDisplay.tsx   # Live GPA readout for current semester
+│   └── ScaleInfo.tsx            # Explanation of the GPA calculation method
 ├── utils/
-│   └── courses.ts           # Pure functions for GPA logic + Course interface
-└── App.tsx                  # Root component, state management
+│   └── courses.ts               # Pure functions for GPA logic + Course/Semester interfaces
+└── App.tsx                      # Root component, state management
 ```
 
 
