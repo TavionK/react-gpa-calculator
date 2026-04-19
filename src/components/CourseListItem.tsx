@@ -53,7 +53,6 @@ export default function CourseListItem({
         <select
           id={`grade-${course.id}`}
           className="h-10 text-lg bg-gray-200 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          name=""
           value={course.grade}
           onChange={(e): void =>
             updateCourse(course.id, "grade", e.target.value)
