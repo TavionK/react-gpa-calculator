@@ -1,7 +1,10 @@
 export default function ScaleInfo() {
   return (
-    <section className="my-8 bg-gray-200 rounded-md overflow-hidden border border-gray-300">
-      <h2 className="text-lg uppercase font-bold bg-gray-300 p-4 mb-2">
+    <section
+      aria-labelledby="faq"
+      className="my-8 bg-gray-200 rounded-md overflow-hidden border border-gray-300"
+    >
+      <h2 id="faq" className="text-lg uppercase font-bold bg-gray-300 p-4 mb-2">
         How is my GPA calculated?
       </h2>
       <p className="px-4 py-2">
