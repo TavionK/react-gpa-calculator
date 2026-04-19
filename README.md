@@ -36,7 +36,7 @@ src/
 ├── components/
 │   ├── CourseListItem.tsx   # Individual course row with inputs and delete button
 │   ├── CoursesList.tsx      # Course list, add/clear controls, and credit summary
-│   ├── GpaDisplay.tsx       # Live GPA readout
+│   ├── SemesterGpaDisplay.tsx       # Live GPA readout
 │   └── ScaleInfo.tsx        # Explanation of the GPA calculation method
 ├── utils/
 │   └── courses.ts           # Pure functions for GPA logic + Course interface
