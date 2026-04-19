@@ -4,6 +4,7 @@ import {
   type Course,
   type Semester,
 } from "../utils/courses.ts";
+import { TrendingDown, TrendingUp } from "lucide-react";
 
 interface GpaTrendProps {
   semesters: Semester[];
@@ -14,15 +15,35 @@ export default function GpaTrend({ semesters, courses }: GpaTrendProps) {
     let trend: string = String(
       (Number(newGpa) - Number(overallGpa)).toFixed(2),
     );
-    if (trend.startsWith("-")) {
+
+    if (trend === "0.00") {
+      return "No change";
+    } else if (trend.startsWith("-")) {
       return trend;
     } else {
       return `+${trend}`;
     }
   }
 
+  function trendDirection() {
+    let comparison: string = compareGpa(
+      calculatePrevGpa(semesters),
+      calculateCompleteGpa(courses, semesters),
+    );
+    if (courses.length > 0 && semesters.length > 0) {
+      if (comparison.startsWith("-")) {
+        return <TrendingDown color="red" />;
+      } else if (comparison.startsWith("+")) {
+        return <TrendingUp color="green" />;
+      }
+    } else {
+      return;
+    }
+  }
+
   return (
     <section className="w-full mt-15 bg-gray-200 rounded-md overflow-hidden border border-gray-300 p-4">
+      {trendDirection()}
       <h2 className="small-text uppercase">GPA Trend</h2>
       {semesters.length === 0 || courses.length === 0 ? (
         <p>-</p>
