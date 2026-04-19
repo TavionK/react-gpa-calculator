@@ -1,6 +1,6 @@
 # GPA Calculator
 
-A clean, weighted GPA calculator built with React and TypeScript, featuring a dark UI styled with Tailwind CSS.
+A clean, weighted GPA calculator built with React and TypeScript, featuring a light UI styled with Tailwind CSS.
 
 ## Tech Stack
 
