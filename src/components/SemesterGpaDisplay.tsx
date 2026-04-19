@@ -6,24 +6,27 @@ interface GpaDisplayProps {
 }
 
 export default function SemesterGpaDisplay({ courses }: GpaDisplayProps) {
+  const semesterGpa: string = calculateSemesterGpa(courses);
+  const totalCredits: number = getTotalCredits(courses);
   return (
-    <div className="bg-blue-500 rounded-md p-6 w-full text-white flex justify-center">
-      <div className="flex text-right divide-solid divide-gray-200 divide-x">
+    <section
+      aria-label="Current semester summary"
+      className="bg-blue-500 rounded-md p-6 w-full text-white flex justify-center"
+    >
+      <dl className="flex text-right divide-solid divide-gray-200 divide-x">
         <div className="px-6 text-left basis-2/3">
-          <p className="small-text sm:text-nowrap">Current Semester GPA</p>
-          <p className="text-4xl font-bold">
-            {calculateSemesterGpa(courses) === "NaN"
-              ? "0.00"
-              : calculateSemesterGpa(courses)}
-          </p>
+          <dt className="small-text sm:text-nowrap">Current Semester GPA</dt>
+          <dd className="text-4xl font-bold">
+            {semesterGpa === "NaN" ? "0.00" : semesterGpa}
+          </dd>
         </div>
         <div className="px-6 basis-1/3">
-          <p className="small-text sm:text-nowrap">Total Credits</p>
-          <p className="text-4xl font-bold">
-            {getTotalCredits(courses) === 0 ? "0" : getTotalCredits(courses)}
-          </p>
+          <dt className="small-text sm:text-nowrap">Total Credits</dt>
+          <dd className="text-4xl font-bold">
+            {totalCredits === 0 ? "0" : totalCredits}
+          </dd>
         </div>
-      </div>
-    </div>
+      </dl>
+    </section>
   );
 }
