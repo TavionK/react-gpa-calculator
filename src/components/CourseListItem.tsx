@@ -30,12 +30,12 @@ export default function CourseListItem({
     <li className="relative flex flex-wrap gap-2 bg-white py-4 pt-10 px-8 rounded-md cursor-pointer hover:border-purple-300 transition-colors duration-300 ease-in-out">
       <label
         className="w-full gap-2 flex flex-col small-text sm:w-auto sm:flex-1"
-        htmlFor="course"
+        htmlFor={`course-${course.id}`}
       >
         Course Name
         <input
           ref={inputRef}
-          id="course"
+          id={`course-${course.id}`}
           className="h-10 text-lg bg-gray-200 rounded-md px-2 py-1 focus:outline-none focus:border-none focus:ring-2 focus:ring-blue-500"
           type="text"
           value={course.course}
@@ -47,11 +47,11 @@ export default function CourseListItem({
       </label>
       <label
         className="flex-1 gap-2 flex flex-col small-text sm:flex-2"
-        htmlFor="grade"
+        htmlFor={`grade-${course.id}`}
       >
         Grade
         <select
-          id="grade"
+          id={`grade-${course.id}`}
           className="h-10 text-lg bg-gray-200 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
           name=""
           value={course.grade}
@@ -75,11 +75,11 @@ export default function CourseListItem({
       </label>
       <label
         className="flex-1 gap-2 flex flex-col small-text sm:flex-2"
-        htmlFor="credits"
+        htmlFor={`credits-${course.id}`}
       >
         Credits
         <select
-          id="credits"
+          id={`credits-${course.id}`}
           className="h-10 text-lg bg-gray-200 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={course.credits}
           onChange={(e): void =>
