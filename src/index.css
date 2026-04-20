@@ -24,14 +24,10 @@
 
 @layer components {
   .AccordionItem {
-    @apply first:rounded-t-md last:rounded-b-md;
-  }
-  .AccordionItem > button {
-    @apply outline-none;
+    @apply first:rounded-t-md last:rounded-b-md overflow-hidden;
   }
 
-  .AccordionItem:focus-within,
-  .AccordionItem:focus-visible{
+  .AccordionItem:focus-within{
     @apply ring-2 ring-blue-500;
   }
 
@@ -45,22 +41,23 @@
 
   /*Accordion Trigger Styles*/
   .AccordionTrigger {
-    @apply flex items-center justify-between p-4 w-full ;
+    @apply flex items-center justify-between p-4 w-full outline-none cursor-pointer;
   }
 
   /*Accordion Content Styles and Animation*/
   .AccordionContent {
     overflow: hidden;
-    @apply text-gray-600 font-light;
+    @apply text-gray-600 font-light bg-gray-100;
   }
+
   .AccordionContent[data-state="open"] {
     @apply border-t border-gray-300;
     animation: slideDown 300ms ease-out;
   }
+
   .AccordionContent[data-state="closed"] {
     animation: slideUp 300ms ease-out;
   }
-
 }
 
 @keyframes slideDown {
