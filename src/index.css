@@ -23,9 +23,6 @@
 }
 
 @layer components {
-  .AccordionItem[data-state="open"] {
-    @apply divide-y divide-gray-300
-  }
   /*Accordion Chevron Styles and Animation*/
   .AccordionChevron {
     transition: transform 300ms;
@@ -45,29 +42,31 @@
     @apply text-gray-600 font-light;
   }
   .AccordionContent[data-state="open"] {
+    @apply border-t border-gray-300;
     animation: slideDown 300ms ease-out;
   }
   .AccordionContent[data-state="closed"] {
     animation: slideUp 300ms ease-out;
   }
 
-  @keyframes slideDown {
-    from {
-      height: 0;
-    }
-    to {
-      /*noinspection CssUnresolvedCustomProperty*/
-      height: var(--radix-accordion-content-height);
-    }
-  }
+}
 
-  @keyframes slideUp {
-    from {
-      /*noinspection CssUnresolvedCustomProperty*/
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    /*noinspection CssUnresolvedCustomProperty*/
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    /*noinspection CssUnresolvedCustomProperty*/
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
   }
 }
