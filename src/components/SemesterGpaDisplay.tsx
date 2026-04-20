@@ -15,13 +15,13 @@ export default function SemesterGpaDisplay({ courses }: GpaDisplayProps) {
     >
       <dl className="flex text-right divide-solid divide-gray-200 divide-x">
         <div className="px-6 text-left basis-2/3">
-          <dt className="small-text sm:text-nowrap">Current Semester GPA</dt>
+          <dt className="small-text text-nowrap">Current Semester GPA</dt>
           <dd className="text-4xl font-bold">
             {semesterGpa === "NaN" ? "0.00" : semesterGpa}
           </dd>
         </div>
         <div className="px-6 basis-1/3">
-          <dt className="small-text sm:text-nowrap">Total Credits</dt>
+          <dt className="small-text text-nowrap">Total Credits</dt>
           <dd className="text-4xl font-bold">
             {totalCredits === 0 ? "0" : totalCredits}
           </dd>
