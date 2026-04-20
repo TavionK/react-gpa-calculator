@@ -47,7 +47,7 @@
   /*Accordion Content Styles and Animation*/
   .AccordionContent {
     overflow: hidden;
-    @apply text-gray-600 font-light bg-gray-100;
+    @apply text-gray-600 font-light bg-gray-100 scroll-mb-20;
   }
 
   .AccordionContent[data-state="open"] {
