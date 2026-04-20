@@ -1,7 +1,7 @@
 import { Accordion } from "radix-ui";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 
-export default function ScaleInfo() {
+export default function Faq() {
   return (
     <section aria-label="Frequently Asked Questions" className="w-full">
       <Accordion.Root

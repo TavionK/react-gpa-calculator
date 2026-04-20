@@ -43,7 +43,7 @@ src/
 │   ├── Header.tsx               # App title and scale info header
 │   ├── OverallGpaDisplay.tsx    # Shows cumulative GPA across all semesters
 │   ├── SemesterGpaDisplay.tsx   # Live GPA readout for current semester
-│   └── ScaleInfo.tsx            # Explanation of the GPA calculation method
+│   └── Faq.tsx            # Explanation of the GPA calculation method
 ├── utils/
 │   └── courses.ts               # Pure functions for GPA logic + Course/Semester interfaces
 └── App.tsx                      # Root component, state management

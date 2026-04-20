@@ -2,7 +2,7 @@ import { useState } from "react";
 import { type Course, type Semester } from "./utils/courses";
 import CoursesList from "./components/CoursesList.tsx";
 import SemesterGpaDisplay from "./components/SemesterGpaDisplay.tsx";
-import ScaleInfo from "./components/ScaleInfo.tsx";
+import Faq from "./components/Faq.tsx";
 import Header from "./components/Header.tsx";
 import GpaTrend from "./components/GpaTrend.tsx";
 import OverallGpaDisplay from "./components/OverallGpaDisplay.tsx";
@@ -29,7 +29,7 @@ function App() {
         <GpaTrend semesters={semesters} courses={courses} />
       </div>
       <Honors semesters={semesters} />
-      <ScaleInfo />
+      <Faq />
     </main>
   );
 }
