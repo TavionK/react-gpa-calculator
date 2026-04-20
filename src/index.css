@@ -12,12 +12,61 @@
   }
 }
 
-@layer components {
+@layer utilities {
   .small-text {
     @apply text-xs tracking-wider uppercase;
   }
 
   .a11y-rings{
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4
+  }
+
+  .accordion-border {
+    @apply border-b border-gray-300;
+  }
+}
+
+@layer components {
+  /*Accordion Chevron Styles and Animation*/
+  .AccordionChevron {
+    transition: transform 300ms;
+  }
+  .AccordionTrigger[data-state="open"] > .AccordionChevron {
+    transform: rotate(180deg);
+  }
+
+  /*Accordion Trigger Styles*/
+  .AccordionTrigger {
+    @apply flex items-center justify-between p-4 w-full border-b border-gray-300;
+  }
+
+  /*Accordion Content Styles and Animation*/
+  .AccordionContent {
+    overflow: hidden;
+    @apply text-gray-600 font-light;
+  }
+  .AccordionContent[data-state="open"] {
+    animation: slideDown 300ms ease-out;
+  }
+  .AccordionContent[data-state="closed"] {
+    animation: slideUp 300ms ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
   }
 }
