@@ -20,13 +20,12 @@
   .a11y-rings{
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4
   }
-
-  .accordion-border {
-    @apply border-b border-gray-300;
-  }
 }
 
 @layer components {
+  .AccordionItem[data-state="open"] {
+    @apply divide-y divide-gray-300
+  }
   /*Accordion Chevron Styles and Animation*/
   .AccordionChevron {
     transition: transform 300ms;
@@ -37,7 +36,7 @@
 
   /*Accordion Trigger Styles*/
   .AccordionTrigger {
-    @apply flex items-center justify-between p-4 w-full border-b border-gray-300;
+    @apply flex items-center justify-between p-4 w-full ;
   }
 
   /*Accordion Content Styles and Animation*/
@@ -57,12 +56,14 @@
       height: 0;
     }
     to {
+      /*noinspection CssUnresolvedCustomProperty*/
       height: var(--radix-accordion-content-height);
     }
   }
 
   @keyframes slideUp {
     from {
+      /*noinspection CssUnresolvedCustomProperty*/
       height: var(--radix-accordion-content-height);
     }
     to {
