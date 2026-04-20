@@ -23,6 +23,18 @@
 }
 
 @layer components {
+  .AccordionItem {
+    @apply first:rounded-t-md last:rounded-b-md;
+  }
+  .AccordionItem > button {
+    @apply outline-none;
+  }
+
+  .AccordionItem:focus-within,
+  .AccordionItem:focus-visible{
+    @apply ring-2 ring-blue-500;
+  }
+
   /*Accordion Chevron Styles and Animation*/
   .AccordionChevron {
     transition: transform 300ms;
