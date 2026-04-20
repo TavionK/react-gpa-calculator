@@ -14,7 +14,17 @@ export default function Faq() {
             <span>How is my GPA calculated?</span>
             <ChevronDownIcon aria-hidden className="AccordionChevron" />
           </Accordion.Trigger>
-          <Accordion.Content className="AccordionContent">
+          <Accordion.Content
+            className="AccordionContent"
+            onAnimationEnd={(e) => {
+              if (e.animationName === "slideDown") {
+                e.currentTarget.scrollIntoView({
+                  behavior: "smooth",
+                  block: "end",
+                });
+              }
+            }}
+          >
             <p className="px-4 py-2">
               Each letter grade is converted to a grade point value — for
               example, an A is 4.0, a B+ is 3.3, and so on. Each course's grade
@@ -36,7 +46,17 @@ export default function Faq() {
             <span>What are the honors eligibility cutoffs?</span>
             <ChevronDownIcon aria-hidden className="AccordionChevron" />
           </Accordion.Trigger>
-          <Accordion.Content className="AccordionContent">
+          <Accordion.Content
+            className="AccordionContent"
+            onAnimationEnd={(e) => {
+              if (e.animationName === "slideDown") {
+                e.currentTarget.scrollIntoView({
+                  behavior: "smooth",
+                  block: "end",
+                });
+              }
+            }}
+          >
             <p className="px-4 py-2">4.0 = Summa Cum Laude</p>
             <p className="px-4 py-2">3.8 - 3.9 = Magna Cum Laude</p>
             <p className="px-4 py-2">3.5 - 3.7 = Cum Laude</p>
