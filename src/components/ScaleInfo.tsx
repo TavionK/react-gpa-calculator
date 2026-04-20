@@ -9,10 +9,10 @@ export default function ScaleInfo() {
         className="w-full bg-gray-200 rounded-md my-8 divide-y divide-gray-300 border border-gray-300"
         collapsible
       >
-        <Accordion.Item value="item-1">
+        <Accordion.Item value="item-1" className="AccordionItem">
           <Accordion.Trigger className="AccordionTrigger">
             <span>How is my GPA calculated?</span>
-            <ChevronDownIcon className="AccordionChevron" />
+            <ChevronDownIcon aria-hidden className="AccordionChevron" />
           </Accordion.Trigger>
           <Accordion.Content className="AccordionContent">
             <p className="px-4 py-2">
@@ -31,10 +31,10 @@ export default function ScaleInfo() {
             </p>
           </Accordion.Content>
         </Accordion.Item>
-        <Accordion.Item value="item-2">
+        <Accordion.Item value="item-2" className="AccordionItem">
           <Accordion.Trigger className="AccordionTrigger">
             <span>What are the honors eligibility cutoffs?</span>
-            <ChevronDownIcon className="AccordionChevron" />
+            <ChevronDownIcon aria-hidden className="AccordionChevron" />
           </Accordion.Trigger>
           <Accordion.Content className="AccordionContent">
             <p className="px-4 py-2">4.0 = Summa Cum Laude</p>
