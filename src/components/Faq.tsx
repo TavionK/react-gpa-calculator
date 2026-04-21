@@ -3,7 +3,8 @@ import { ChevronDownIcon } from "@radix-ui/react-icons";
 
 export default function Faq() {
   return (
-    <section aria-label="Frequently Asked Questions" className="w-full">
+    <section className="w-full">
+      <h2 className="sr-only">Frequently asked questions</h2>
       <Accordion.Root
         type="single"
         className="w-full bg-gray-200 rounded-md my-8 divide-y divide-gray-300 border border-gray-300"
