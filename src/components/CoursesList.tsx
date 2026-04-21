@@ -57,74 +57,67 @@ export default function CoursesList({
   }
 
   return (
-    <section aria-labelledby="semester-overview">
-      <h2
-        className="mt-8 mb-4 font-bold text-lg uppercase"
-        id="semester-overview"
-      >
+    <section>
+      <h2 className="mt-8 mb-4 font-bold text-lg uppercase">
         Semester Overview
       </h2>
 
-      <section aria-label="Course List">
-        {courses.length === 0 ? (
-          <div className="bg-gray-200 rounded-2xl p-4 border border-dashed border-gray-400 flex flex-col items-center text-center">
-            <p className="text-4xl mt-4" aria-hidden="true">
-              📚
-            </p>
-            <p className="text-xl font-bold my-4">
-              Ready to calculate your GPA?
-            </p>
-            <p>
-              Add your courses and grades to get a precision analysis of your
-              academic standing.
-            </p>
+      {courses.length === 0 ? (
+        <div className="bg-gray-200 rounded-2xl p-4 border border-dashed border-gray-400 flex flex-col items-center text-center">
+          <p className="text-4xl mt-4" aria-hidden="true">
+            📚
+          </p>
+          <p className="text-xl font-bold my-4">Ready to calculate your GPA?</p>
+          <p>
+            Add your courses and grades to get a precision analysis of your
+            academic standing.
+          </p>
+          <button
+            onClick={handleAddCourse}
+            className="w-full my-4 flex justify-center gap-2 cursor-pointer p-4 sm:p-4 sm:w-1/2 rounded-md bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 ease-in-out a11y-rings"
+          >
+            <Plus />
+            Add Your First Course
+          </button>
+        </div>
+      ) : (
+        <div>
+          <ul className="flex flex-col gap-4">
+            {courses.map((course: Course) => (
+              <CourseListItem
+                key={course.id}
+                updateCourse={updateCourse}
+                course={course}
+                courses={courses}
+                setCourses={setCourses}
+              />
+            ))}
+          </ul>
+          <div className="flex flex-col sm:flex-row gap-4 my-4">
             <button
               onClick={handleAddCourse}
-              className="w-full my-4 flex justify-center gap-2 cursor-pointer p-4 sm:p-4 sm:w-1/2 rounded-md bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 ease-in-out a11y-rings"
+              className="flex justify-center items-center w-full gap-2 basis-3/4 cursor-pointer p-2 sm:p-4 rounded-md bg-blue-200 hover:bg-blue-300 transition-colors duration-300 ease-in-out a11y-rings"
             >
               <Plus />
-              Add Your First Course
+              Add Course
             </button>
-          </div>
-        ) : (
-          <div>
-            <ul className="flex flex-col gap-4">
-              {courses.map((course: Course) => (
-                <CourseListItem
-                  key={course.id}
-                  updateCourse={updateCourse}
-                  course={course}
-                  courses={courses}
-                  setCourses={setCourses}
-                />
-              ))}
-            </ul>
-            <div className="flex flex-col sm:flex-row gap-4 my-4">
-              <button
-                onClick={handleAddCourse}
-                className="flex justify-center items-center w-full gap-2 basis-3/4 cursor-pointer p-2 sm:p-4 rounded-md bg-blue-200 hover:bg-blue-300 transition-colors duration-300 ease-in-out a11y-rings"
-              >
-                <Plus />
-                Add Course
-              </button>
-              <button
-                onClick={handleSaveSemester}
-                className="cursor-pointer w-full basis-1/4 p-2 sm:p-4 bg-blue-500 rounded-md text-white
+            <button
+              onClick={handleSaveSemester}
+              className="cursor-pointer w-full basis-1/4 p-2 sm:p-4 bg-blue-500 rounded-md text-white
                 hover:bg-blue-600 transition-colors duration-300 ease-in-out
                 a11y-rings"
-              >
-                Save Semester
-              </button>
-            </div>
-            <button
-              onClick={clearAllCourses}
-              className="flex justify-center items-center w-full cursor-pointer rounded-md p-2 sm:p-4 border-2 border-gray-300 text-gray-600 hover:text-red-500 hover:border-red-500 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:border-red-500 focus-visible:text-red-500"
             >
-              Clear Courses
+              Save Semester
             </button>
           </div>
-        )}
-      </section>
+          <button
+            onClick={clearAllCourses}
+            className="flex justify-center items-center w-full cursor-pointer rounded-md p-2 sm:p-4 border-2 border-gray-300 text-gray-600 hover:text-red-500 hover:border-red-500 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:border-red-500 focus-visible:text-red-500"
+          >
+            Clear Courses
+          </button>
+        </div>
+      )}
     </section>
   );
 }
