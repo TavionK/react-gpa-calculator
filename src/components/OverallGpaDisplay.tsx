@@ -5,21 +5,26 @@ interface FullGpaDisplayProps {
 }
 
 export default function OverallGpaDisplay({ semesters }: FullGpaDisplayProps) {
+  const gpaValue = semesters.length === 0 ? "—" : calculatePrevGpa(semesters);
+
   return (
     <section
       aria-label="Overall GPA summary"
+      aria-atomic="true"
+      aria-live="polite"
       className="w-full bg-gray-200 rounded-md overflow-hidden border border-gray-300 p-4 flex flex-col justify-end"
     >
-      <dl>
-        <dt className="small-text uppercase">Overall GPA</dt>
+      <p className="small-text uppercase">Overall GPA</p>
+      <p className="text-2xl font-bold">
         {semesters.length === 0 ? (
-          <dd aria-label="No semesters saved" className="text-2xl font-bold">
-            —
-          </dd>
+          <>
+            <span aria-hidden="true">—</span>
+            <span className="sr-only">No semesters saved</span>
+          </>
         ) : (
-          <dd className="text-2xl font-bold">{calculatePrevGpa(semesters)}</dd>
+          gpaValue
         )}
-      </dl>
+      </p>
     </section>
   );
 }
