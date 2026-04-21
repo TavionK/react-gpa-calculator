@@ -48,6 +48,7 @@ export default function CourseListItem({
       <label
         className="flex-1 gap-2 flex flex-col small-text sm:flex-2"
         htmlFor={`grade-${course.id}`}
+        aria-label="Course grade"
       >
         Grade
         <select
@@ -75,6 +76,7 @@ export default function CourseListItem({
       <label
         className="flex-1 gap-2 flex flex-col small-text sm:flex-2"
         htmlFor={`credits-${course.id}`}
+        aria-label="Course credits"
       >
         Credits
         <select
