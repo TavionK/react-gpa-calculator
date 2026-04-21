@@ -47,24 +47,21 @@ export default function GpaTrend({ semesters, courses }: GpaTrendProps) {
       className="w-full bg-gray-200 rounded-md overflow-hidden border border-gray-300 p-4 flex flex-col justify-end"
     >
       {trendDirection()}
-      <dl>
-        <dt className="small-text uppercase">GPA Trend</dt>
-        {semesters.length === 0 || courses.length === 0 ? (
-          <dd
-            aria-label="No trend data available"
-            className="font-bold text-2xl"
-          >
-            —
-          </dd>
-        ) : (
-          <dd className="text-2xl font-bold">
-            {compareGpa(
-              calculatePrevGpa(semesters),
-              calculateCompleteGpa(courses, semesters),
-            )}
-          </dd>
-        )}
-      </dl>
+
+      <p className="small-text uppercase">GPA Trend</p>
+      {semesters.length === 0 || courses.length === 0 ? (
+        <p className="font-bold text-2xl">
+          <span aria-hidden="true">—</span>
+          <span className="sr-only">No trend data available</span>
+        </p>
+      ) : (
+        <p className="text-2xl font-bold">
+          {compareGpa(
+            calculatePrevGpa(semesters),
+            calculateCompleteGpa(courses, semesters),
+          )}
+        </p>
+      )}
     </section>
   );
 }
