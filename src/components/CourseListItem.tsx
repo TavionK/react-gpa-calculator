@@ -50,7 +50,8 @@ export default function CourseListItem({
         htmlFor={`grade-${course.id}`}
         aria-label="Course grade"
       >
-        Grade
+        <span aria-hidden="true">Grade</span>
+        <span className="sr-only">Course grade</span>
         <select
           id={`grade-${course.id}`}
           className="h-10 text-lg bg-gray-200 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -78,7 +79,8 @@ export default function CourseListItem({
         htmlFor={`credits-${course.id}`}
         aria-label="Course credits"
       >
-        Credits
+        <span aria-hidden="true">Credits</span>
+        <span className="sr-only">Course credits</span>
         <select
           id={`credits-${course.id}`}
           className="h-10 text-lg bg-gray-200 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -95,7 +97,7 @@ export default function CourseListItem({
       </label>
       <button
         type="button"
-        aria-label={`Delete ${course.course} course`}
+        aria-label={course.course ? `Delete ${course.course}` : "Delete course"}
         className="absolute top-2 right-2 cursor-pointer border border-transparent hover:border-red-500 hover:text-red-500 focus-visible:outline-none focus-visible:ring-2  focus-visible:ring-red-500 focus-visible:text-red-500 rounded-md group transition-colors duration-300 ease-in-out"
         onClick={() => {
           setCourses(deleteCourse(courses, course.id));
