@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <div className="sm:basis-3/4">
+    <header className="sm:basis-3/4">
       <h1
         aria-label="Grade point average"
         className="text-5xl leading-10 font-bold font-serif italic mb-2"
@@ -11,6 +11,6 @@ export default function Header() {
         </span>
       </h1>
       <p className="small-text">4.0 Scale - Credit Weighted</p>
-    </div>
+    </header>
   );
 }
