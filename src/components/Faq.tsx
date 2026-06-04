@@ -1,10 +1,24 @@
 import { Accordion } from "radix-ui";
-import { ChevronDownIcon } from "@radix-ui/react-icons";
+import { ChevronDownIcon, ChevronLeftIcon } from "@radix-ui/react-icons";
 
-export default function Faq() {
+interface FaqProps {
+  onBack: () => void;
+}
+
+export default function Faq({ onBack }: FaqProps) {
   return (
     <section className="w-full">
-      <h2 className="sr-only">Frequently asked questions</h2>
+      <div className="flex items-center gap-3 mb-6">
+        <button
+          onClick={onBack}
+          aria-label="Back to calculator"
+          className="a11y-rings flex items-center gap-1 small-text text-blue-600 hover:text-blue-800 hover:underline rounded px-2 py-1"
+        >
+          <ChevronLeftIcon aria-hidden />
+          Back
+        </button>
+        <h2 className="text-2xl font-bold font-serif italic">FAQ</h2>
+      </div>
       <Accordion.Root
         type="single"
         className="w-full bg-gray-200 rounded-md my-8 divide-y divide-gray-300 border border-gray-300"
