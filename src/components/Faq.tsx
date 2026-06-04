@@ -8,16 +8,23 @@ interface FaqProps {
 export default function Faq({ onBack }: FaqProps) {
   return (
     <section className="w-full">
-      <div className="flex items-center gap-3 mb-6">
+      <div className="mb-6">
         <button
           onClick={onBack}
           aria-label="Back to calculator"
-          className="a11y-rings flex items-center gap-1 small-text text-blue-600 hover:text-blue-800 hover:underline rounded px-2 py-1"
+          className="btn small-text mb-6"
         >
           <ChevronLeftIcon aria-hidden />
           Back
         </button>
-        <h2 className="text-2xl font-bold font-serif italic">FAQ</h2>
+        <h2
+          aria-label="Frequently asked questions"
+          className="text-5xl leading-10 font-bold font-serif italic mb-2"
+        >
+          Frequently <br aria-hidden="true" />
+          <span aria-hidden="true" className="text-blue-500">Asked</span>
+        </h2>
+        <p className="small-text">Common questions</p>
       </div>
       <Accordion.Root
         type="single"

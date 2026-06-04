@@ -29,7 +29,7 @@ function App() {
           <SemesterGpaDisplay courses={courses} />
           <button
             onClick={() => setView("faq")}
-            className="small-text a11y-rings rounded px-2 py-1 text-blue-600 hover:text-blue-800 hover:underline"
+            className="btn small-text"
           >
             FAQ
           </button>
