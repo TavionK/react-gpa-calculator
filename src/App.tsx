@@ -38,30 +38,27 @@ function App() {
             semesters={semesters}
           />
         </div>
-        <section
-          aria-label="Semester statistics"
-          className="hidden lg:flex lg:basis-1/3 lg:flex-col lg:gap-4 lg:mt-8"
-        >
-          {semesters.length > 0 && (
-            <>
+        {semesters.length > 0 && (
+          <section
+            aria-labelledby="semester-statistics-heading"
+            className="mt-8 lg:mt-0 lg:basis-1/3"
+          >
+            <h2
+              id="semester-statistics-heading"
+              className="mb-4 font-bold text-lg uppercase"
+            >
+              Semester Statistics
+            </h2>
+            <div className="flex flex-col gap-4">
               <div className="flex gap-2">
                 <OverallGpaDisplay semesters={semesters} />
                 <GpaTrend semesters={semesters} courses={courses} />
               </div>
               <Honors semesters={semesters} />
-            </>
-          )}
-        </section>
+            </div>
+          </section>
+        )}
       </div>
-      {semesters.length > 0 && (
-        <div className="lg:hidden">
-          <div className="flex justify-between my-4 gap-2">
-            <OverallGpaDisplay semesters={semesters} />
-            <GpaTrend semesters={semesters} courses={courses} />
-          </div>
-          <Honors semesters={semesters} />
-        </div>
-      )}
     </main>
   );
 }
