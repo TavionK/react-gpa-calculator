@@ -57,8 +57,11 @@ export default function CoursesList({
   }
 
   return (
-    <section>
-      <h2 className="mt-8 mb-4 font-bold text-lg uppercase">
+    <section aria-labelledby="semester-overview-heading">
+      <h2
+        id="semester-overview-heading"
+        className="mt-8 mb-4 font-bold text-lg uppercase lg:mt-0"
+      >
         Semester Overview
       </h2>
 
