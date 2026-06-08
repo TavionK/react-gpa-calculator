@@ -1,10 +1,11 @@
+import { Tooltip } from "radix-ui";
 import {
   calculatePrevGpa,
   calculateCompleteGpa,
   type Course,
   type Semester,
 } from "../utils/courses.ts";
-import { TrendingDown, TrendingUp } from "lucide-react";
+import { TrendingDown, TrendingUp, CircleQuestionMark } from "lucide-react";
 
 interface GpaTrendProps {
   semesters: Semester[];
@@ -48,9 +49,34 @@ export default function GpaTrend({ semesters, courses }: GpaTrendProps) {
     >
       {trendDirection()}
 
-      <h3 id="gpa-trend-heading" className="small-text uppercase">
-        GPA Trend
-      </h3>
+      <div className="flex items-center gap-1">
+        <h3 id="gpa-trend-heading" className="small-text uppercase">
+          GPA Trend
+        </h3>
+        <Tooltip.Provider delayDuration={200}>
+          <Tooltip.Root>
+            <Tooltip.Trigger asChild>
+              <button
+                type="button"
+                aria-label="What is GPA Trend?"
+                className="a11y-rings rounded-full text-gray-500 hover:text-gray-700"
+              >
+                <CircleQuestionMark aria-hidden="true" size={14} />
+              </button>
+            </Tooltip.Trigger>
+            <Tooltip.Portal>
+              <Tooltip.Content
+                className="TooltipContent rounded-md bg-gray-800 px-3 py-2 text-xs font-normal text-white shadow-md max-w-60"
+                sideOffset={5}
+              >
+                Shows whether adding your current courses to your saved
+                semesters would raise or lower your overall GPA.
+                <Tooltip.Arrow className="fill-gray-800" />
+              </Tooltip.Content>
+            </Tooltip.Portal>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+      </div>
       {semesters.length === 0 || courses.length === 0 ? (
         <p className="font-bold text-2xl">
           <span aria-hidden="true">—</span>
