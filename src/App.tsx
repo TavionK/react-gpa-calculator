@@ -29,8 +29,8 @@ function App() {
           <SemesterGpaDisplay courses={courses} />
         </div>
       </div>
-      <div className="lg:flex lg:items-start lg:gap-8 lg:mt-8">
-        <div className="lg:basis-2/3">
+      <div className="lg:grid lg:grid-cols-3 lg:items-start lg:gap-8 lg:mt-8">
+        <div className="lg:col-span-2">
           <CoursesList
             courses={courses}
             setCourses={setCourses}
@@ -41,7 +41,7 @@ function App() {
         {semesters.length > 0 && (
           <section
             aria-labelledby="semester-statistics-heading"
-            className="mt-8 lg:mt-0 lg:basis-1/3"
+            className="mt-8 lg:mt-0 lg:col-span-1"
           >
             <h2
               id="semester-statistics-heading"
