@@ -21,8 +21,10 @@ export default function Faq({ onBack }: FaqProps) {
           aria-label="Frequently asked questions"
           className="text-5xl leading-10 font-bold font-serif italic mb-2"
         >
-          Frequently <br aria-hidden="true" />
-          <span aria-hidden="true" className="text-blue-500">Asked</span>
+          Frequently Asked <br aria-hidden="true" />
+          <span aria-hidden="true" className="text-blue-500">
+            Questions
+          </span>
         </h2>
         <p className="small-text">Common questions</p>
       </div>
