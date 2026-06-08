@@ -1,5 +1,5 @@
 import { Accordion } from "radix-ui";
-import { ChevronDownIcon, ChevronLeftIcon } from "@radix-ui/react-icons";
+import { ChevronDown, ChevronLeft } from "lucide-react";
 
 interface FaqProps {
   onBack: () => void;
@@ -14,7 +14,7 @@ export default function Faq({ onBack }: FaqProps) {
           aria-label="Back to calculator"
           className="btn small-text mb-6"
         >
-          <ChevronLeftIcon aria-hidden />
+          <ChevronLeft aria-hidden="true" />
           Back
         </button>
         <h2
@@ -37,7 +37,7 @@ export default function Faq({ onBack }: FaqProps) {
         <Accordion.Item value="item-1" className="AccordionItem">
           <Accordion.Trigger className="AccordionTrigger">
             <span>How is my GPA calculated?</span>
-            <ChevronDownIcon aria-hidden className="AccordionChevron" />
+            <ChevronDown aria-hidden="true" className="AccordionChevron" />
           </Accordion.Trigger>
           <Accordion.Content
             className="AccordionContent"
@@ -69,7 +69,7 @@ export default function Faq({ onBack }: FaqProps) {
         <Accordion.Item value="item-2" className="AccordionItem">
           <Accordion.Trigger className="AccordionTrigger">
             <span>What is the grading scale?</span>
-            <ChevronDownIcon aria-hidden className="AccordionChevron" />
+            <ChevronDown aria-hidden="true" className="AccordionChevron" />
           </Accordion.Trigger>
           <Accordion.Content
             className="AccordionContent"
@@ -105,7 +105,7 @@ export default function Faq({ onBack }: FaqProps) {
         <Accordion.Item value="item-3" className="AccordionItem">
           <Accordion.Trigger className="AccordionTrigger">
             <span>What are the honors eligibility cutoffs?</span>
-            <ChevronDownIcon aria-hidden className="AccordionChevron" />
+            <ChevronDown aria-hidden="true" className="AccordionChevron" />
           </Accordion.Trigger>
           <Accordion.Content
             className="AccordionContent"
@@ -126,7 +126,7 @@ export default function Faq({ onBack }: FaqProps) {
         <Accordion.Item value="item-4" className="AccordionItem">
           <Accordion.Trigger className="AccordionTrigger">
             <span>What happens when I save a semester?</span>
-            <ChevronDownIcon aria-hidden className="AccordionChevron" />
+            <ChevronDown aria-hidden="true" className="AccordionChevron" />
           </Accordion.Trigger>
           <Accordion.Content
             className="AccordionContent"
@@ -153,10 +153,8 @@ export default function Faq({ onBack }: FaqProps) {
         </Accordion.Item>
         <Accordion.Item value="item-5" className="AccordionItem">
           <Accordion.Trigger className="AccordionTrigger">
-            <span>
-              Will my data be saved if I refresh or close the page?
-            </span>
-            <ChevronDownIcon aria-hidden className="AccordionChevron" />
+            <span>Will my data be saved if I refresh or close the page?</span>
+            <ChevronDown aria-hidden="true" className="AccordionChevron" />
           </Accordion.Trigger>
           <Accordion.Content
             className="AccordionContent"
@@ -171,9 +169,9 @@ export default function Faq({ onBack }: FaqProps) {
           >
             <p className="px-4 py-2">
               No. Everything you enter — your current courses and any saved
-              semesters — lives only in this browser tab's memory. Refreshing
-              or closing the page clears it, so be sure to note down any
-              results you want to keep.
+              semesters — lives only in this browser tab's memory. Refreshing or
+              closing the page clears it, so be sure to note down any results
+              you want to keep.
             </p>
           </Accordion.Content>
         </Accordion.Item>
