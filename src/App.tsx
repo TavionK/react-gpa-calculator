@@ -22,27 +22,39 @@ function App() {
   }
 
   return (
-    <main className="min-h-dvh max-w-3xl mx-auto px-4 py-8">
-      <div className="flex flex-col items-start gap-4 sm:flex-row sm:justify-between">
-        <Header />
-        <div className="flex flex-col items-start sm:items-end gap-2">
+    <main className="min-h-dvh max-w-3xl lg:max-w-6xl mx-auto px-4 py-8">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between lg:gap-8">
+        <Header onFaqClick={() => setView("faq")} />
+        <div className="w-full lg:basis-1/3">
           <SemesterGpaDisplay courses={courses} />
-          <button
-            onClick={() => setView("faq")}
-            className="btn small-text"
-          >
-            FAQ
-          </button>
         </div>
       </div>
-      <CoursesList
-        courses={courses}
-        setCourses={setCourses}
-        setSemesters={setSemesters}
-        semesters={semesters}
-      />
+      <div className="lg:flex lg:items-start lg:gap-8 lg:mt-8">
+        <div className="lg:basis-2/3">
+          <CoursesList
+            courses={courses}
+            setCourses={setCourses}
+            setSemesters={setSemesters}
+            semesters={semesters}
+          />
+        </div>
+        <section
+          aria-label="Semester statistics"
+          className="hidden lg:flex lg:basis-1/3 lg:flex-col lg:gap-4 lg:mt-8"
+        >
+          {semesters.length > 0 && (
+            <>
+              <div className="flex gap-2">
+                <OverallGpaDisplay semesters={semesters} />
+                <GpaTrend semesters={semesters} courses={courses} />
+              </div>
+              <Honors semesters={semesters} />
+            </>
+          )}
+        </section>
+      </div>
       {semesters.length > 0 && (
-        <div>
+        <div className="lg:hidden">
           <div className="flex justify-between my-4 gap-2">
             <OverallGpaDisplay semesters={semesters} />
             <GpaTrend semesters={semesters} courses={courses} />
