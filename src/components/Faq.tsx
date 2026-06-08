@@ -68,6 +68,42 @@ export default function Faq({ onBack }: FaqProps) {
         </Accordion.Item>
         <Accordion.Item value="item-2" className="AccordionItem">
           <Accordion.Trigger className="AccordionTrigger">
+            <span>What is the grading scale?</span>
+            <ChevronDownIcon aria-hidden className="AccordionChevron" />
+          </Accordion.Trigger>
+          <Accordion.Content
+            className="AccordionContent"
+            onAnimationEnd={(e) => {
+              if (e.animationName === "slideDown") {
+                e.currentTarget.scrollIntoView({
+                  behavior: "smooth",
+                  block: "end",
+                });
+              }
+            }}
+          >
+            <p className="px-4 py-2">
+              Each letter grade converts to a grade point value used to
+              calculate your GPA:
+            </p>
+            <ul className="px-4 py-2 grid grid-cols-2 gap-x-8 gap-y-1 sm:grid-cols-3">
+              <li>A = 4.0</li>
+              <li>A- = 3.7</li>
+              <li>B+ = 3.3</li>
+              <li>B = 3.0</li>
+              <li>B- = 2.7</li>
+              <li>C+ = 2.3</li>
+              <li>C = 2.0</li>
+              <li>C- = 1.7</li>
+              <li>D+ = 1.3</li>
+              <li>D = 1.0</li>
+              <li>D- = 0.7</li>
+              <li>F = 0.0</li>
+            </ul>
+          </Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item value="item-3" className="AccordionItem">
+          <Accordion.Trigger className="AccordionTrigger">
             <span>What are the honors eligibility cutoffs?</span>
             <ChevronDownIcon aria-hidden className="AccordionChevron" />
           </Accordion.Trigger>
@@ -85,6 +121,60 @@ export default function Faq({ onBack }: FaqProps) {
             <p className="px-4 py-2">4.0 = Summa Cum Laude</p>
             <p className="px-4 py-2">3.8 - 3.9 = Magna Cum Laude</p>
             <p className="px-4 py-2">3.5 - 3.7 = Cum Laude</p>
+          </Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item value="item-4" className="AccordionItem">
+          <Accordion.Trigger className="AccordionTrigger">
+            <span>What happens when I save a semester?</span>
+            <ChevronDownIcon aria-hidden className="AccordionChevron" />
+          </Accordion.Trigger>
+          <Accordion.Content
+            className="AccordionContent"
+            onAnimationEnd={(e) => {
+              if (e.animationName === "slideDown") {
+                e.currentTarget.scrollIntoView({
+                  behavior: "smooth",
+                  block: "end",
+                });
+              }
+            }}
+          >
+            <p className="px-4 py-2">
+              Saving a semester rolls your current courses up into a single
+              summary — total grade points and total credits — and adds it to
+              your saved semesters. Your course list is then cleared so you can
+              start the next semester.
+            </p>
+            <p className="px-4 py-2">
+              Once a semester is saved, the individual courses behind it can't
+              be recovered or edited — only the summary is kept.
+            </p>
+          </Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item value="item-5" className="AccordionItem">
+          <Accordion.Trigger className="AccordionTrigger">
+            <span>
+              Will my data be saved if I refresh or close the page?
+            </span>
+            <ChevronDownIcon aria-hidden className="AccordionChevron" />
+          </Accordion.Trigger>
+          <Accordion.Content
+            className="AccordionContent"
+            onAnimationEnd={(e) => {
+              if (e.animationName === "slideDown") {
+                e.currentTarget.scrollIntoView({
+                  behavior: "smooth",
+                  block: "end",
+                });
+              }
+            }}
+          >
+            <p className="px-4 py-2">
+              No. Everything you enter — your current courses and any saved
+              semesters — lives only in this browser tab's memory. Refreshing
+              or closing the page clears it, so be sure to note down any
+              results you want to keep.
+            </p>
           </Accordion.Content>
         </Accordion.Item>
       </Accordion.Root>
