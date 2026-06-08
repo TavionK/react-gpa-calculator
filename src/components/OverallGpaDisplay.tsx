@@ -8,8 +8,13 @@ export default function OverallGpaDisplay({ semesters }: FullGpaDisplayProps) {
   const gpaValue = semesters.length === 0 ? "—" : calculatePrevGpa(semesters);
 
   return (
-    <section className="w-full bg-gray-200 rounded-md overflow-hidden border border-gray-300 p-4 flex flex-col justify-end">
-      <h2 className="small-text uppercase">Overall GPA</h2>
+    <section
+      aria-labelledby="overall-gpa-heading"
+      className="w-full bg-gray-200 rounded-md overflow-hidden border border-gray-300 p-4 flex flex-col justify-end"
+    >
+      <h3 id="overall-gpa-heading" className="small-text uppercase">
+        Overall GPA
+      </h3>
       <p className="text-2xl font-bold">
         {semesters.length === 0 ? (
           <>

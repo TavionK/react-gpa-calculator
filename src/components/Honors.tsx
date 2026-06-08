@@ -19,8 +19,13 @@ export default function Honors({ semesters }: HonorsProps) {
   }
 
   return (
-    <section className="w-full p-4 bg-gray-200 rounded-md overflow-hidden border border-gray-300">
-      <h2 className="small-text">Honors Eligibility</h2>
+    <section
+      aria-labelledby="honors-eligibility-heading"
+      className="w-full p-4 bg-gray-200 rounded-md overflow-hidden border border-gray-300"
+    >
+      <h3 id="honors-eligibility-heading" className="small-text">
+        Honors Eligibility
+      </h3>
       {semesters.length === 0 ? (
         <p className="text-2xl font-bold">
           <span aria-hidden="true">—</span>

@@ -7,7 +7,7 @@ interface FaqProps {
 
 export default function Faq({ onBack }: FaqProps) {
   return (
-    <section className="w-full">
+    <section aria-labelledby="faq-heading" className="w-full">
       <div className="mb-6">
         <button
           onClick={onBack}
@@ -18,11 +18,14 @@ export default function Faq({ onBack }: FaqProps) {
           Back
         </button>
         <h2
+          id="faq-heading"
           aria-label="Frequently asked questions"
           className="text-5xl leading-10 font-bold font-serif italic mb-2"
         >
-          Frequently <br aria-hidden="true" />
-          <span aria-hidden="true" className="text-blue-500">Asked</span>
+          Frequently Asked <br aria-hidden="true" />
+          <span aria-hidden="true" className="text-blue-500">
+            Questions
+          </span>
         </h2>
         <p className="small-text">Common questions</p>
       </div>
