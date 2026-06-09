@@ -11,7 +11,7 @@ export default function Header({ onFaqClick }: HeaderProps) {
         aria-label="Grade point average"
         className="text-5xl leading-10 font-bold font-serif italic mb-2"
       >
-        Grade Point <br aria-hidden="true" />
+        Grade Point <br aria-hidden="true" className="lg:hidden" />
         <span aria-hidden="true" className="text-blue-500">
           Average
         </span>
