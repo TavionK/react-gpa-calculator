@@ -13,7 +13,7 @@ export default function Faq({ onBack }: FaqProps) {
         <button
           onClick={onBack}
           aria-label="Back to calculator"
-          className="btn small-text mb-6"
+          className="btn-back mb-6"
         >
           <ChevronLeft aria-hidden="true" />
           Back
