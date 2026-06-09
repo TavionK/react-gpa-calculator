@@ -43,6 +43,10 @@
     @apply w-full cursor-pointer p-3 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition-colors duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4;
   }
 
+  .stat-card {
+    @apply w-full bg-white rounded-xl border border-gray-200 shadow-sm p-4 flex flex-col gap-2;
+  }
+
   .btn-ghost-danger {
     @apply text-xs tracking-wider uppercase text-gray-400 hover:text-red-400 cursor-pointer transition-colors duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 rounded;
   }
