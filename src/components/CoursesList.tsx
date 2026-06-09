@@ -96,12 +96,12 @@ export default function CoursesList({
               />
             ))}
           </ul>
-          <div className="flex flex-col gap-2 mt-4">
-            <button onClick={handleAddCourse} className="btn-primary">
+          <div className="flex flex-col gap-2 mt-4 lg:flex-row">
+            <button onClick={handleAddCourse} className="btn-primary lg:basis-2/3">
               <Plus size={16} aria-hidden="true" />
               Add Course
             </button>
-            <button onClick={handleSaveSemester} className="btn-secondary">
+            <button onClick={handleSaveSemester} className="btn-secondary lg:basis-1/3">
               Save Semester
             </button>
           </div>
