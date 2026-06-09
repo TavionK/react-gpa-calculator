@@ -13,7 +13,7 @@ export default function SemesterGpaDisplay({ courses }: GpaDisplayProps) {
       aria-live="polite"
       aria-atomic="true"
       aria-labelledby="current-semester-summary-heading"
-      className="bg-blue-500 rounded-md p-6 w-full text-white flex justify-center shadow-sm"
+      className="bg-blue-600 rounded-md p-6 w-full text-white flex justify-center shadow-sm"
     >
       <h2 id="current-semester-summary-heading" className="sr-only">
         Current semester summary

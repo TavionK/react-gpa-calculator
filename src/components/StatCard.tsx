@@ -21,7 +21,7 @@ export default function StatCard({
   return (
     <section aria-labelledby={id} className="stat-card">
       <div className="flex items-center gap-1.5">
-        <h3 id={id} className="small-text text-gray-400">
+        <h3 id={id} className="small-text text-gray-500">
           {label}
         </h3>
         {tooltip && (

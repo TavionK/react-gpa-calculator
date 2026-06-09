@@ -78,7 +78,7 @@ export default function CoursesList({
             <p className="text-lg font-bold text-gray-800">
               Ready to calculate your semester GPA?
             </p>
-            <p className="text-sm text-gray-400 max-w-xs mx-auto leading-relaxed">
+            <p className="text-sm text-gray-500 max-w-xs mx-auto leading-relaxed">
               Add your courses and grades to get a precision analysis of your
               academic standing.
             </p>
