@@ -96,29 +96,20 @@ export default function CoursesList({
               />
             ))}
           </ul>
-          <div className="flex flex-col sm:flex-row gap-4 my-4">
-            <button
-              onClick={handleAddCourse}
-              className="flex justify-center items-center w-full gap-2 basis-3/4 cursor-pointer p-2 sm:p-4 rounded-md bg-blue-200 hover:bg-blue-300 transition-colors duration-300 ease-in-out a11y-rings"
-            >
-              <Plus />
+          <div className="flex flex-col gap-2 mt-4">
+            <button onClick={handleAddCourse} className="btn-primary">
+              <Plus size={16} aria-hidden="true" />
               Add Course
             </button>
-            <button
-              onClick={handleSaveSemester}
-              className="cursor-pointer w-full basis-1/4 p-2 sm:p-4 bg-blue-500 rounded-md text-white
-                hover:bg-blue-600 transition-colors duration-300 ease-in-out
-                a11y-rings"
-            >
+            <button onClick={handleSaveSemester} className="btn-secondary">
               Save Semester
             </button>
           </div>
-          <button
-            onClick={clearAllCourses}
-            className="flex justify-center items-center w-full cursor-pointer rounded-md p-2 sm:p-4 border-2 border-gray-300 text-gray-600 hover:text-red-500 hover:border-red-500 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:border-red-500 focus-visible:text-red-500"
-          >
-            Clear Courses
-          </button>
+          <div className="flex justify-end mt-3">
+            <button onClick={clearAllCourses} className="btn-ghost-danger">
+              Clear Courses
+            </button>
+          </div>
         </div>
       )}
     </section>
