@@ -18,7 +18,7 @@ export default function Header({ onFaqClick }: HeaderProps) {
       </h1>
       <p className="small-text">4.0 Scale - Credit Weighted</p>
       <nav aria-label="App navigation" className="mt-4">
-        <button onClick={onFaqClick} className="btn small-text">
+        <button onClick={onFaqClick} className="btn-nav">
           <CircleHelp aria-hidden="true" size={16} />
           FAQ
         </button>

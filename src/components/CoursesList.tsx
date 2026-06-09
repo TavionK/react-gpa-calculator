@@ -5,7 +5,7 @@ import {
   type Semester,
 } from "../utils/courses.ts";
 import CourseListItem from "./CourseListItem.tsx";
-import { Plus } from "lucide-react";
+import { Plus, GraduationCap } from "lucide-react";
 
 interface CourseListProps {
   courses: Course[];
@@ -66,20 +66,28 @@ export default function CoursesList({
       </h2>
 
       {courses.length === 0 ? (
-        <div className="bg-gray-200 rounded-2xl p-4 border border-dashed border-gray-400 flex flex-col items-center text-center">
-          <p className="text-4xl mt-4" aria-hidden="true">
-            📚
-          </p>
-          <p className="text-xl font-bold my-4">Ready to calculate your GPA?</p>
-          <p>
-            Add your courses and grades to get a precision analysis of your
-            academic standing.
-          </p>
+        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-10 flex flex-col items-center text-center gap-5">
+          <div className="flex items-center justify-center w-14 h-14 rounded-full bg-blue-50">
+            <GraduationCap
+              size={28}
+              className="text-blue-400"
+              aria-hidden="true"
+            />
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <p className="text-lg font-bold text-gray-800">
+              Ready to calculate your semester GPA?
+            </p>
+            <p className="text-sm text-gray-500 max-w-xs mx-auto leading-relaxed">
+              Add your courses and grades to get a precision analysis of your
+              academic standing.
+            </p>
+          </div>
           <button
             onClick={handleAddCourse}
-            className="w-full my-4 flex justify-center gap-2 cursor-pointer p-4 sm:p-4 sm:w-1/2 rounded-md bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 ease-in-out a11y-rings"
+            className="btn-primary sm:w-auto px-6"
           >
-            <Plus />
+            <Plus size={16} aria-hidden="true" />
             Add Your First Course
           </button>
         </div>
@@ -96,29 +104,26 @@ export default function CoursesList({
               />
             ))}
           </ul>
-          <div className="flex flex-col sm:flex-row gap-4 my-4">
+          <div className="flex flex-col gap-2 mt-4 lg:flex-row">
             <button
               onClick={handleAddCourse}
-              className="flex justify-center items-center w-full gap-2 basis-3/4 cursor-pointer p-2 sm:p-4 rounded-md bg-blue-200 hover:bg-blue-300 transition-colors duration-300 ease-in-out a11y-rings"
+              className="btn-primary lg:basis-2/3"
             >
-              <Plus />
+              <Plus size={16} aria-hidden="true" />
               Add Course
             </button>
             <button
               onClick={handleSaveSemester}
-              className="cursor-pointer w-full basis-1/4 p-2 sm:p-4 bg-blue-500 rounded-md text-white
-                hover:bg-blue-600 transition-colors duration-300 ease-in-out
-                a11y-rings"
+              className="btn-secondary lg:basis-1/3"
             >
               Save Semester
             </button>
           </div>
-          <button
-            onClick={clearAllCourses}
-            className="flex justify-center items-center w-full cursor-pointer rounded-md p-2 sm:p-4 border-2 border-gray-300 text-gray-600 hover:text-red-500 hover:border-red-500 transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:border-red-500 focus-visible:text-red-500"
-          >
-            Clear Courses
-          </button>
+          <div className="flex justify-end mt-3">
+            <button onClick={clearAllCourses} className="btn-ghost-danger">
+              Clear Courses
+            </button>
+          </div>
         </div>
       )}
     </section>
