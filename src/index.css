@@ -23,6 +23,38 @@
 }
 
 @layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-gray-300 bg-gray-200 hover:bg-gray-300 hover:cursor-pointer transition-colors duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4;
+  }
+
+  .btn-nav {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs tracking-wider uppercase text-gray-600 border border-gray-500 hover:border-gray-600 hover:text-gray-800 hover:bg-white cursor-pointer transition-colors duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2;
+  }
+
+  .btn-back {
+    @apply inline-flex items-center gap-1 text-xs tracking-wider uppercase text-gray-600 hover:text-gray-800 cursor-pointer transition-colors duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded;
+  }
+
+  .btn-primary {
+    @apply flex justify-center items-center w-full gap-2 cursor-pointer p-3 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4 shadow-sm;
+  }
+
+  .btn-secondary {
+    @apply w-full cursor-pointer p-3 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition-colors duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4 shadow-sm;
+  }
+
+  .field-input {
+    @apply h-10 w-full bg-gray-100 border border-gray-200 rounded-md px-3 text-sm font-medium text-gray-900 shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-150;
+  }
+
+  .stat-card {
+    @apply w-full bg-white rounded-xl border border-gray-200 shadow-sm p-4 flex flex-col gap-2;
+  }
+
+  .btn-ghost-danger {
+    @apply text-xs tracking-wider uppercase text-gray-600 hover:text-red-600 cursor-pointer transition-colors duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 rounded;
+  }
+
   .AccordionItem {
     @apply first:rounded-t-md last:rounded-b-md overflow-hidden;
   }
@@ -41,7 +73,7 @@
 
   /*Accordion Trigger Styles*/
   .AccordionTrigger {
-    @apply flex items-center justify-between p-4 w-full outline-none cursor-pointer;
+    @apply flex items-center justify-between gap-6 p-4 w-full outline-none cursor-pointer text-left;
   }
 
   /*Accordion Content Styles and Animation*/
@@ -57,6 +89,22 @@
 
   .AccordionContent[data-state="closed"] {
     animation: slideUp 300ms ease-out;
+  }
+
+  /*Tooltip Content Styles and Animation*/
+  .TooltipContent {
+    animation-duration: 200ms;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+  }
+
+  .TooltipContent[data-state="delayed-open"],
+  .TooltipContent[data-state="instant-open"] {
+    animation-name: fadeIn;
+  }
+
+  .TooltipContent[data-state="closed"] {
+    animation-name: fadeOut;
   }
 }
 
@@ -77,5 +125,27 @@
   }
   to {
     height: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.96);
   }
 }

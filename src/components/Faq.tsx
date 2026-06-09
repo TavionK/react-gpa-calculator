@@ -1,68 +1,65 @@
 import { Accordion } from "radix-ui";
-import { ChevronDownIcon } from "@radix-ui/react-icons";
+import { ChevronDown, ChevronLeft } from "lucide-react";
+import { faqs } from "../data/faqs.tsx";
 
-export default function Faq() {
+interface FaqProps {
+  onBack: () => void;
+}
+
+export default function Faq({ onBack }: FaqProps) {
   return (
-    <section className="w-full">
-      <h2 className="sr-only">Frequently asked questions</h2>
+    <section aria-labelledby="faq-heading" className="w-full">
+      <div className="mb-6">
+        <button
+          onClick={onBack}
+          aria-label="Back to calculator"
+          className="btn-back mb-6"
+        >
+          <ChevronLeft aria-hidden="true" />
+          Back
+        </button>
+        <h2
+          id="faq-heading"
+          aria-label="Frequently asked questions"
+          className="text-5xl leading-10 font-bold font-serif italic mb-2"
+        >
+          Frequently Asked <br aria-hidden="true" />
+          <span aria-hidden="true" className="text-blue-500">
+            Questions
+          </span>
+        </h2>
+        <p className="small-text">Common questions</p>
+      </div>
       <Accordion.Root
         type="single"
         className="w-full bg-gray-200 rounded-md my-8 divide-y divide-gray-300 border border-gray-300"
         collapsible
       >
-        <Accordion.Item value="item-1" className="AccordionItem">
-          <Accordion.Trigger className="AccordionTrigger">
-            <span>How is my GPA calculated?</span>
-            <ChevronDownIcon aria-hidden className="AccordionChevron" />
-          </Accordion.Trigger>
-          <Accordion.Content
-            className="AccordionContent"
-            onAnimationEnd={(e) => {
-              if (e.animationName === "slideDown") {
-                e.currentTarget.scrollIntoView({
-                  behavior: "smooth",
-                  block: "end",
-                });
-              }
-            }}
-          >
-            <p className="px-4 py-2">
-              Each letter grade is converted to a grade point value — for
-              example, an A is 4.0, a B+ is 3.3, and so on. Each course's grade
-              points are then multiplied by its credit hours to get the weighted
-              grade points for that course. Your GPA is the sum of all weighted
-              grade points divided by your total credit hours.
-            </p>
-            <p className="px-4 py-2">
-              For example, if you get a B (3.0) in a 3 credit course:
-            </p>
-            <p className="px-4 py-2">3.0 × 3 = 9.0 grade points</p>
-            <p className="px-4 py-2">
-              GPA = total grade points ÷ total credits
-            </p>
-          </Accordion.Content>
-        </Accordion.Item>
-        <Accordion.Item value="item-2" className="AccordionItem">
-          <Accordion.Trigger className="AccordionTrigger">
-            <span>What are the honors eligibility cutoffs?</span>
-            <ChevronDownIcon aria-hidden className="AccordionChevron" />
-          </Accordion.Trigger>
-          <Accordion.Content
-            className="AccordionContent"
-            onAnimationEnd={(e) => {
-              if (e.animationName === "slideDown") {
-                e.currentTarget.scrollIntoView({
-                  behavior: "smooth",
-                  block: "end",
-                });
-              }
-            }}
-          >
-            <p className="px-4 py-2">4.0 = Summa Cum Laude</p>
-            <p className="px-4 py-2">3.8 - 3.9 = Magna Cum Laude</p>
-            <p className="px-4 py-2">3.5 - 3.7 = Cum Laude</p>
-          </Accordion.Content>
-        </Accordion.Item>
+        {faqs.map((faq) => (
+          <Accordion.Item key={faq.id} value={faq.id} className="AccordionItem">
+            <Accordion.Trigger className="AccordionTrigger">
+              <span>{faq.question}</span>
+              <ChevronDown
+                aria-hidden="true"
+                className="AccordionChevron"
+                strokeWidth={1.5}
+              />
+            </Accordion.Trigger>
+            <Accordion.Content
+              className="AccordionContent"
+              onAnimationEnd={(e) => {
+                if (e.animationName === "slideDown") {
+                  e.currentTarget.scrollIntoView({
+                    behavior: "smooth",
+                    block: "end",
+                  });
+                }
+              }}
+            >
+              {faq.answer}
+            </Accordion.Content>
+          </Accordion.Item>
+        ))}
       </Accordion.Root>
     </section>
   );
