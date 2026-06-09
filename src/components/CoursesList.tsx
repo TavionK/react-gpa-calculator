@@ -5,7 +5,7 @@ import {
   type Semester,
 } from "../utils/courses.ts";
 import CourseListItem from "./CourseListItem.tsx";
-import { Plus } from "lucide-react";
+import { Plus, GraduationCap } from "lucide-react";
 
 interface CourseListProps {
   courses: Course[];
@@ -66,19 +66,17 @@ export default function CoursesList({
       </h2>
 
       {courses.length === 0 ? (
-        <div className="bg-gray-200 rounded-2xl p-4 border border-dashed border-gray-400 flex flex-col items-center text-center">
-          <p className="text-4xl mt-4" aria-hidden="true">
-            📚
-          </p>
-          <p className="text-xl font-bold my-4">Ready to calculate your GPA?</p>
-          <p>
-            Add your courses and grades to get a precision analysis of your
-            academic standing.
-          </p>
-          <button
-            onClick={handleAddCourse}
-            className="btn-primary sm:w-1/2 my-4"
-          >
+        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-10 flex flex-col items-center text-center gap-5">
+          <div className="flex items-center justify-center w-14 h-14 rounded-full bg-blue-50">
+            <GraduationCap size={28} className="text-blue-400" aria-hidden="true" />
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <p className="text-lg font-bold text-gray-800">Ready to calculate your GPA?</p>
+            <p className="text-sm text-gray-400 max-w-xs mx-auto leading-relaxed">
+              Add your courses and grades to get a precision analysis of your academic standing.
+            </p>
+          </div>
+          <button onClick={handleAddCourse} className="btn-primary sm:w-auto px-6">
             <Plus size={16} aria-hidden="true" />
             Add Your First Course
           </button>
