@@ -37,7 +37,7 @@ export default function Faq({ onBack }: FaqProps) {
         <Accordion.Item value="item-1" className="AccordionItem">
           <Accordion.Trigger className="AccordionTrigger">
             <span>How is my GPA calculated?</span>
-            <ChevronDown aria-hidden="true" className="AccordionChevron" />
+            <ChevronDown aria-hidden="true" className="AccordionChevron" strokeWidth={1.5} />
           </Accordion.Trigger>
           <Accordion.Content
             className="AccordionContent"
@@ -69,7 +69,7 @@ export default function Faq({ onBack }: FaqProps) {
         <Accordion.Item value="item-2" className="AccordionItem">
           <Accordion.Trigger className="AccordionTrigger">
             <span>What is the grading scale?</span>
-            <ChevronDown aria-hidden="true" className="AccordionChevron" />
+            <ChevronDown aria-hidden="true" className="AccordionChevron" strokeWidth={1.5} />
           </Accordion.Trigger>
           <Accordion.Content
             className="AccordionContent"
@@ -105,7 +105,7 @@ export default function Faq({ onBack }: FaqProps) {
         <Accordion.Item value="item-3" className="AccordionItem">
           <Accordion.Trigger className="AccordionTrigger">
             <span>What are the honors eligibility cutoffs?</span>
-            <ChevronDown aria-hidden="true" className="AccordionChevron" />
+            <ChevronDown aria-hidden="true" className="AccordionChevron" strokeWidth={1.5} />
           </Accordion.Trigger>
           <Accordion.Content
             className="AccordionContent"
@@ -126,7 +126,7 @@ export default function Faq({ onBack }: FaqProps) {
         <Accordion.Item value="item-4" className="AccordionItem">
           <Accordion.Trigger className="AccordionTrigger">
             <span>What happens when I save a semester?</span>
-            <ChevronDown aria-hidden="true" className="AccordionChevron" />
+            <ChevronDown aria-hidden="true" className="AccordionChevron" strokeWidth={1.5} />
           </Accordion.Trigger>
           <Accordion.Content
             className="AccordionContent"
@@ -154,7 +154,7 @@ export default function Faq({ onBack }: FaqProps) {
         <Accordion.Item value="item-5" className="AccordionItem">
           <Accordion.Trigger className="AccordionTrigger">
             <span>Will my data be saved if I refresh or close the page?</span>
-            <ChevronDown aria-hidden="true" className="AccordionChevron" />
+            <ChevronDown aria-hidden="true" className="AccordionChevron" strokeWidth={1.5} />
           </Accordion.Trigger>
           <Accordion.Content
             className="AccordionContent"
