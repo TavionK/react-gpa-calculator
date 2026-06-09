@@ -40,7 +40,7 @@ function App() {
         </div>
         <section
             aria-labelledby="semester-statistics-heading"
-            className={`mt-8 lg:mt-0 lg:col-span-1${semesters.length === 0 ? " hidden lg:block" : ""}`}
+            className="mt-8 lg:mt-0 lg:col-span-1"
           >
             <h2
               id="semester-statistics-heading"
