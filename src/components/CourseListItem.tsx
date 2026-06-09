@@ -30,7 +30,7 @@ export default function CourseListItem({
   }, []);
 
   return (
-    <li className="bg-white border border-gray-200 border-l-[3px] border-l-blue-500 rounded-lg p-4 flex flex-col gap-3">
+    <li className="bg-white border border-gray-200 border-l-[3px] border-l-blue-500 rounded-lg p-4 flex flex-col gap-3 shadow-sm">
       <div className="flex items-end gap-3">
         <label
           className="flex-1 flex flex-col gap-1.5 small-text"
