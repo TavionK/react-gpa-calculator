@@ -77,9 +77,9 @@ export default function CoursesList({
           </p>
           <button
             onClick={handleAddCourse}
-            className="w-full my-4 flex justify-center gap-2 cursor-pointer p-4 sm:p-4 sm:w-1/2 rounded-md bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 ease-in-out a11y-rings"
+            className="btn-primary sm:w-1/2 my-4"
           >
-            <Plus />
+            <Plus size={16} aria-hidden="true" />
             Add Your First Course
           </button>
         </div>
