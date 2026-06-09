@@ -63,6 +63,20 @@ export function calculatePrevGpa(semesters: Semester[]): string {
   return (totalGradePoints / totalCredits).toFixed(2);
 }
 
+export function calculateHonors(semesters: Semester[]): string {
+  const gpa = Number(calculatePrevGpa(semesters));
+  if (gpa === 4.0) return "Summa Cum Laude";
+  if (gpa >= 3.8) return "Magna Cum Laude";
+  if (gpa >= 3.5) return "Cum Laude";
+  return "No Honors";
+}
+
+export function compareGpa(overallGpa: string, newGpa: string): string {
+  const trend = String((Number(newGpa) - Number(overallGpa)).toFixed(2));
+  if (trend === "0.00") return "No change";
+  return trend.startsWith("-") ? trend : `+${trend}`;
+}
+
 // Calculates the GPA for all previous semesters, including the current semester
 export function calculateCompleteGpa(
   courseArr: Course[],
