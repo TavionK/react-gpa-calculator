@@ -68,15 +68,25 @@ export default function CoursesList({
       {courses.length === 0 ? (
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-10 flex flex-col items-center text-center gap-5">
           <div className="flex items-center justify-center w-14 h-14 rounded-full bg-blue-50">
-            <GraduationCap size={28} className="text-blue-400" aria-hidden="true" />
+            <GraduationCap
+              size={28}
+              className="text-blue-400"
+              aria-hidden="true"
+            />
           </div>
           <div className="flex flex-col gap-1.5">
-            <p className="text-lg font-bold text-gray-800">Ready to calculate your GPA?</p>
+            <p className="text-lg font-bold text-gray-800">
+              Ready to calculate your semester GPA?
+            </p>
             <p className="text-sm text-gray-400 max-w-xs mx-auto leading-relaxed">
-              Add your courses and grades to get a precision analysis of your academic standing.
+              Add your courses and grades to get a precision analysis of your
+              academic standing.
             </p>
           </div>
-          <button onClick={handleAddCourse} className="btn-primary sm:w-auto px-6">
+          <button
+            onClick={handleAddCourse}
+            className="btn-primary sm:w-auto px-6"
+          >
             <Plus size={16} aria-hidden="true" />
             Add Your First Course
           </button>
@@ -95,11 +105,17 @@ export default function CoursesList({
             ))}
           </ul>
           <div className="flex flex-col gap-2 mt-4 lg:flex-row">
-            <button onClick={handleAddCourse} className="btn-primary lg:basis-2/3">
+            <button
+              onClick={handleAddCourse}
+              className="btn-primary lg:basis-2/3"
+            >
               <Plus size={16} aria-hidden="true" />
               Add Course
             </button>
-            <button onClick={handleSaveSemester} className="btn-secondary lg:basis-1/3">
+            <button
+              onClick={handleSaveSemester}
+              className="btn-secondary lg:basis-1/3"
+            >
               Save Semester
             </button>
           </div>
