@@ -38,10 +38,9 @@ function App() {
             semesters={semesters}
           />
         </div>
-        {semesters.length > 0 && (
-          <section
+        <section
             aria-labelledby="semester-statistics-heading"
-            className="mt-8 lg:mt-0 lg:col-span-1"
+            className={`mt-8 lg:mt-0 lg:col-span-1${semesters.length === 0 ? " hidden lg:block" : ""}`}
           >
             <h2
               id="semester-statistics-heading"
@@ -57,7 +56,6 @@ function App() {
               <Honors semesters={semesters} />
             </div>
           </section>
-        )}
       </div>
     </main>
   );
