@@ -14,9 +14,6 @@ interface CourseListItemProps {
   ) => void;
 }
 
-const inputClass =
-  "h-10 w-full bg-gray-50 border border-gray-200 rounded-md px-3 text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-150";
-
 export default function CourseListItem({
   course,
   updateCourse,
@@ -40,7 +37,7 @@ export default function CourseListItem({
           <input
             ref={inputRef}
             id={`course-${course.id}`}
-            className={inputClass}
+            className="field-input"
             type="text"
             value={course.course}
             placeholder="e.g. Calculus II"
@@ -67,7 +64,7 @@ export default function CourseListItem({
           <span className="sr-only">Course grade</span>
           <select
             id={`grade-${course.id}`}
-            className={inputClass}
+            className="field-input"
             value={course.grade}
             onChange={(e) => updateCourse(course.id, "grade", e.target.value)}
           >
@@ -94,7 +91,7 @@ export default function CourseListItem({
           <span className="sr-only">Course credits</span>
           <select
             id={`credits-${course.id}`}
-            className={inputClass}
+            className="field-input"
             value={course.credits}
             onChange={(e) =>
               updateCourse(course.id, "credits", Number(e.target.value))
