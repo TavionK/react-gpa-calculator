@@ -63,6 +63,10 @@ export function calculatePrevGpa(semesters: Semester[]): string {
   return (totalGradePoints / totalCredits).toFixed(2);
 }
 
+export function getTotalSemesterCredits(semesters: Semester[]): number {
+  return semesters.reduce((total, s) => total + s.totalCredits, 0);
+}
+
 export function calculateHonors(semesters: Semester[]): string {
   const gpa = Number(calculatePrevGpa(semesters));
   if (gpa === 4.0) return "Summa Cum Laude";

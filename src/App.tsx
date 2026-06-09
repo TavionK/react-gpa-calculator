@@ -6,6 +6,7 @@ import {
   calculateCompleteGpa,
   calculateHonors,
   compareGpa,
+  getTotalSemesterCredits,
 } from "./utils/courses";
 import CoursesList from "./components/CoursesList.tsx";
 import SemesterGpaDisplay from "./components/SemesterGpaDisplay.tsx";
@@ -20,15 +21,15 @@ function TrendValue({ trend }: { trend: string }) {
   }
   if (trend.startsWith("-")) {
     return (
-      <span className="flex items-center gap-1.5 text-red-500">
-        <TrendingDown size={22} aria-hidden="true" />
+      <span className="flex items-center gap-2 text-red-500">
+        <TrendingDown size={22} strokeWidth={3} aria-hidden="true" />
         {trend}
       </span>
     );
   }
   return (
-    <span className="flex items-center gap-1.5 text-green-600">
-      <TrendingUp size={22} aria-hidden="true" />
+    <span className="flex items-center gap-2 text-green-600">
+      <TrendingUp size={22} strokeWidth={3} aria-hidden="true" />
       {trend}
     </span>
   );
@@ -99,12 +100,21 @@ function App() {
                 tooltip="Shows whether adding your current courses to your saved semesters would raise or lower your overall GPA."
               />
             </div>
-            <StatCard
-              id="honors-eligibility-heading"
-              label="Honors Eligibility"
-              value={calculateHonors(semesters)}
-              isEmpty={semesters.length === 0}
-            />
+            <div className="flex gap-2">
+              <StatCard
+                id="total-credits-heading"
+                label="Total Credits"
+                value={getTotalSemesterCredits(semesters)}
+                isEmpty={semesters.length === 0}
+                tooltip="Total credit hours earned across all saved semesters."
+              />
+              <StatCard
+                id="honors-eligibility-heading"
+                label="Honors Eligibility"
+                value={calculateHonors(semesters)}
+                isEmpty={semesters.length === 0}
+              />
+            </div>
           </div>
         </section>
       </div>
