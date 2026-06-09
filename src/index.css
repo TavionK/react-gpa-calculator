@@ -45,7 +45,7 @@
 
   /*Accordion Trigger Styles*/
   .AccordionTrigger {
-    @apply flex items-center justify-between p-4 w-full outline-none cursor-pointer;
+    @apply flex items-center justify-between p-4 w-full outline-none cursor-pointer text-left;
   }
 
   /*Accordion Content Styles and Animation*/
