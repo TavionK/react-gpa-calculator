@@ -27,8 +27,8 @@ export default function CourseListItem({
   }, []);
 
   return (
-    <li className="bg-white border border-gray-200 border-l-[3px] border-l-blue-500 rounded-lg p-4 flex flex-col gap-3 shadow-sm">
-      <div className="flex items-end gap-3">
+    <li className="relative bg-white border border-gray-200 border-l-[3px] border-l-blue-500 rounded-lg p-4 flex flex-col gap-3 shadow-sm">
+      <div className="flex items-end gap-3 pr-8">
         <label
           className="flex-1 flex flex-col gap-1.5 small-text"
           htmlFor={`course-${course.id}`}
@@ -44,15 +44,6 @@ export default function CourseListItem({
             onChange={(e) => updateCourse(course.id, "course", e.target.value)}
           />
         </label>
-
-        <button
-          type="button"
-          aria-label={course.course ? `Delete ${course.course}` : "Delete course"}
-          className="shrink-0 mb-0.5 p-1.5 rounded-md text-gray-400 hover:text-red-400 hover:bg-red-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-1 transition-colors duration-150 cursor-pointer"
-          onClick={() => setCourses(deleteCourse(courses, course.id))}
-        >
-          <X size={16} aria-hidden="true" strokeWidth={3} />
-        </button>
       </div>
 
       <div className="flex gap-3">
@@ -106,6 +97,14 @@ export default function CourseListItem({
           </select>
         </label>
       </div>
+      <button
+        type="button"
+        aria-label={course.course ? `Delete ${course.course}` : "Delete course"}
+        className="absolute top-11 right-4 p-1.5 rounded-md text-gray-400 hover:text-red-400 hover:bg-red-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-1 transition-colors duration-150 cursor-pointer"
+        onClick={() => setCourses(deleteCourse(courses, course.id))}
+      >
+        <X size={16} aria-hidden="true" strokeWidth={3} />
+      </button>
     </li>
   );
 }
